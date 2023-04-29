@@ -1,0 +1,69 @@
+.carousel-items-outer-container {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.carousel-items-container {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.carousel-item-outer-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-item-container {
+  height: 100%;
+  user-select: none;
+  touch-action: pan-y;
+  transform-origin: 50% 50% 0px;
+}
+
+.carousel-item-0 {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(0%);
+}
+
+.carousel-item-1 {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(20%);
+}
+
+.carousel-item-2 {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(40%);
+}
+
+.carousel-item-3 {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(60%);
+}
+
+.carousel-item-4 {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(80%);
+}
+
+.carousel-item-active {
+  border: green solid 2px;
+}
+

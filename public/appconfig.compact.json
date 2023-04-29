@@ -1,0 +1,16 @@
+{
+  "appName": "Alt1 rotations",
+  "description": "Visualizes ability rotations",
+  "appUrl": "./index.html",
+  "configUrl": "./appconfig.compact.json",
+  "iconUrl": "./favicon.png",
+  "defaultWidth": 300,
+  "defaultHeight": 300,
+  "minWidth": 300,
+  "minHeight": 300,
+  "maxWidth": 300,
+  "maxHeight": 300,
+  "requestHandlers": [],
+  "activators": [],
+  "permissions": "gamestate,overlay"
+}
