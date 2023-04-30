@@ -1,25 +1,6 @@
 {
-  "arrowParens": "avoid",
-  "bracketSpacing": true,
-  "endOfLine": "auto",
-  "htmlWhitespaceSensitivity": "ignore",
-  "bracketSameLine": false,
-  "jsxSingleQuote": false,
-  "parser": "typescript",
-  "printWidth": 120,
-  "proseWrap": "preserve",
-  "quoteProps": "as-needed",
-  "semi": false,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "useTabs": false,
-  "overrides": [
-    {
-      "files": ["**/*.css", "**/*.scss", "**/*.html"],
-      "options": {
-        "singleQuote": false
-      }
-    }
-  ]
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
 }

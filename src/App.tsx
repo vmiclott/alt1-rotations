@@ -1,5 +1,6 @@
 import { AbilityCarousel } from './components/AbilityCarousel'
 import { Ability } from './abilities'
+import { AbilityRotationCreator } from './components/AbilityRotationCreator'
 
 const goodRotation: Ability[] = [
   { name: 'blank', tick: -1 },
@@ -23,7 +24,12 @@ const goodRotation: Ability[] = [
 ]
 
 function App() {
-  return <AbilityCarousel size={5} abilities={goodRotation}></AbilityCarousel>
+  return (
+    <div className="app-container">
+      <AbilityRotationCreator />
+      <AbilityCarousel size={5}></AbilityCarousel>
+    </div>
+  )
 }
 
 export default App
