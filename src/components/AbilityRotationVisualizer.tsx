@@ -41,6 +41,11 @@ export const AbilityRotationVisualizer = ({
     const abilityRotationText = localStorage.getItem(abilityRotationName)
     if (abilityRotationText) {
       setAbilityRotation(JSON.parse(abilityRotationText))
+      setStarted(false)
+      setMagicState({
+        currentIndex: 0,
+        currentTick: 0,
+      })
     }
   }
 
