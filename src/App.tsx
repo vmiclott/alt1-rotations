@@ -1,4 +1,4 @@
-import { AbilityCarousel } from './components/AbilityCarousel'
+import { AbilityRotationVisualizer } from './components/AbilityRotationVisualizer'
 import { Ability } from './abilities'
 import { AbilityRotationCreator } from './components/AbilityRotationCreator'
 
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="app-container">
       <AbilityRotationCreator />
-      <AbilityCarousel size={5}></AbilityCarousel>
+      <AbilityRotationVisualizer size={5}></AbilityRotationVisualizer>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import './abilityCarousel.css'
+import './abilityRotationVisualizer.css'
 import { Ability, abilitiesMap } from '../abilities'
 
-type AbilityCarouselProps = {
+type AbilityRotationVisualizerProps = {
   size: number
 }
 
@@ -17,7 +17,9 @@ const findNextIndex = (abilities: Ability[], currentIndex: number): number => {
   return nextIndex
 }
 
-export const AbilityCarousel = ({ size }: AbilityCarouselProps) => {
+export const AbilityRotationVisualizer = ({
+  size,
+}: AbilityRotationVisualizerProps) => {
   const offSet = Math.floor(size / 2)
   const [abilityRotation, setAbilityRotation] = useState<Ability[]>([])
   const [magicState, setMagicState] = useState({
@@ -73,7 +75,7 @@ export const AbilityCarousel = ({ size }: AbilityCarouselProps) => {
   return (
     <div>
       <button onClick={handleButtonStart}>Start</button>
-      <div className="ability-carousel-load-rotation-container">
+      <div className="ability-rotation-visualizer-load-rotation-container">
         <input
           value={abilityRotationName}
           onChange={(e) => setAbilityRotationName(e.target.value)}
@@ -81,21 +83,27 @@ export const AbilityCarousel = ({ size }: AbilityCarouselProps) => {
         <button onClick={handleLoad}>Load</button>
       </div>
       <p>tick: {magicState.currentTick}</p>
-      <div className="carousel-items-outer-container">
-        <div className="carousel-items-container">
+      <div className="rotation-visualizer-items-outer-container">
+        <div className="rotation-visualizer-items-container">
           {abilityRotation
             .slice(magicState.currentIndex, magicState.currentIndex + size)
             .map(({ name, tick }, idx) => (
-              <div className="carousel-item-outer-container" key={idx}>
-                <div draggable="false" className="carousel-item-container">
-                  <div className={`carousel-item-${idx}`}>
+              <div
+                className="rotation-visualizer-item-outer-container"
+                key={idx}
+              >
+                <div
+                  draggable="false"
+                  className="rotation-visualizer-item-container"
+                >
+                  <div className={`rotation-visualizer-item-${idx}`}>
                     <img
                       src={abilitiesMap[name]}
                       width="50"
                       height="50"
                       className={
                         tick === magicState.currentTick
-                          ? 'carousel-item-active'
+                          ? 'rotation-visualizer-item-active'
                           : ''
                       }
                     />
