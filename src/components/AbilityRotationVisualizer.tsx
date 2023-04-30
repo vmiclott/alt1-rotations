@@ -27,8 +27,7 @@ export const AbilityRotationVisualizer = ({
     currentTick: 0,
   })
   const [started, setStarted] = useState(false)
-  const [abilityRotationName, setAbilityRotationName] =
-    useState('ability-rotation')
+  const [abilityRotationName, setAbilityRotationName] = useState('')
 
   const handleButtonStart = () => {
     setStarted(true)
@@ -77,6 +76,7 @@ export const AbilityRotationVisualizer = ({
       <button onClick={handleButtonStart}>Start</button>
       <div className="ability-rotation-visualizer-load-rotation-container">
         <input
+          className="ability-rotation-loader-input"
           value={abilityRotationName}
           onChange={(e) => setAbilityRotationName(e.target.value)}
         ></input>

@@ -1,0 +1,28 @@
+.new-ability-rotation-input {
+  color: black;
+}
+
+.ability-input-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+
+.ability-input {
+  width: 20rem;
+  height: 10rem;
+  font-family: 'Oswald, sans-serif';
+  padding: 0 1rem;
+  background: var(--nis-col-back);
+  cursor: auto;
+}
+
+.ability-button {
+  background: var(--nis-col-back);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 1rem;
+}
