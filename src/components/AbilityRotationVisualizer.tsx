@@ -1,15 +1,13 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './abilityRotationVisualizer.css'
 import { Ability, abilitiesMap } from '../abilities'
 
 const defaultRotation: Ability[] = [
-  { name: 'resonance', tick: -1 },
-  { name: 'sever', tick: -1 },
   { name: 'resonance', tick: 0 },
   { name: 'sever', tick: 3 },
-  { name: 'wrack', tick: 6 },
-  { name: 'combust', tick: 7 },
-  { name: 'resonance', tick: 9 },
+  { name: 'wrack', tick: 3 },
+  { name: 'combust', tick: 6 },
+  { name: 'resonance', tick: 6 },
   { name: 'sever', tick: 9 },
   { name: 'punish', tick: 12 },
   { name: 'preparation', tick: 12 },
@@ -31,6 +29,14 @@ const findNextIndex = (abilities: Ability[], currentIndex: number): number => {
   return nextIndex
 }
 
+const getAbilitiesLeftSide = (
+  abilities: Ability[],
+  currentTick: number
+): number => {
+  const newArr = abilities.filter((el) => el.tick <= currentTick)
+  return newArr.length
+}
+
 export const AbilityRotationVisualizer = () => {
   const [abilityRotation, setAbilityRotation] =
     useState<Ability[]>(defaultRotation)
@@ -38,11 +44,16 @@ export const AbilityRotationVisualizer = () => {
   const [magicState, setMagicState] = useState({
     currentIndex: 0,
     currentTick: 0,
+    useOffSet: false,
   })
   const [started, setStarted] = useState(false)
   const [abilityRotationName, setAbilityRotationName] = useState('')
   const [size, setSize] = useState(0)
+  const [startPositions, setStartPositions] = useState(0)
+  const [blockContainerWidth, setBlockContainerWidth] = useState(0)
+
   const elementRef = useRef<HTMLDivElement>(null)
+  const imgWidth = 50
 
   useEffect(() => {
     function handleResize() {
@@ -50,11 +61,21 @@ export const AbilityRotationVisualizer = () => {
         // Set how many abilities are showing (odd)
         // 80 comes from 50px img width + 30px gap
         setSize(Math.floor(elementRef.current.clientWidth / 80) | 1)
+        setStartPositions(elementRef.current.clientWidth / 2 - 25)
+        setBlockContainerWidth(
+          elementRef.current.clientWidth /
+            Math.floor(elementRef.current.clientWidth / 80)
+        )
       }
     }
 
     if (elementRef.current?.clientWidth) {
       setSize(Math.floor(elementRef.current.clientWidth / 80) | 1)
+      setStartPositions(elementRef.current.clientWidth / 2 - 25)
+      setBlockContainerWidth(
+        elementRef.current.clientWidth /
+          Math.floor(elementRef.current.clientWidth / 80)
+      )
     }
 
     window.addEventListener('resize', handleResize)
@@ -69,6 +90,7 @@ export const AbilityRotationVisualizer = () => {
     setMagicState({
       currentIndex: 0,
       currentTick: 0,
+      useOffSet: false,
     })
   }
 
@@ -80,6 +102,7 @@ export const AbilityRotationVisualizer = () => {
       setMagicState({
         currentIndex: 0,
         currentTick: 0,
+        useOffSet: false,
       })
     }
   }
@@ -100,10 +123,28 @@ export const AbilityRotationVisualizer = () => {
             newIndex = nextIndex
           }
         }
+        let abilitiesLeftSide = offSet
+        if (elementRef.current?.clientWidth) {
+          if (!magicState.useOffSet) {
+            abilitiesLeftSide = getAbilitiesLeftSide(
+              abilityRotation,
+              magicState.currentTick
+            )
+          }
+
+          let blocksLeftSide =
+            abilitiesLeftSide < offSet ? abilitiesLeftSide : offSet
+          let pos =
+            blocksLeftSide < offSet
+              ? startPositions - blockContainerWidth * blocksLeftSide
+              : startPositions - blockContainerWidth * offSet
+          setStartPositions(pos)
+        }
 
         return {
           currentIndex: newIndex - offSet,
           currentTick: newTick,
+          useOffSet: abilitiesLeftSide >= offSet,
         }
       })
     }, 600)
@@ -113,19 +154,26 @@ export const AbilityRotationVisualizer = () => {
 
   return (
     <div>
-      <div ref={elementRef} className="visualizer__items-outer-container">
-        <div className="visualizer__items-container">
+      <p>startPositions:{startPositions}</p>
+      <p>size:{size}</p>
+      <p>blockWidth:{blockContainerWidth}</p>
+      <div className="visualizer__items-outer-container">
+        <div ref={elementRef} className="visualizer__items-container">
           {abilityRotation
             .slice(magicState.currentIndex, magicState.currentIndex + size)
             .map(({ name, tick }, idx) => (
               <div className="visualizer__item-outer-container" key={idx}>
                 <div draggable="false" className="visualizer__item-container">
                   <div
-                    style={{ transform: `translateX(${(100 / size) * idx}%` }}
+                    style={{
+                      marginLeft: started
+                        ? `${startPositions + idx * blockContainerWidth}px`
+                        : `${startPositions + idx * blockContainerWidth}px`,
+                    }}
                   >
                     <img
                       src={abilitiesMap[name]}
-                      width="50"
+                      width={imgWidth}
                       height="50"
                       className={
                         tick === magicState.currentTick
