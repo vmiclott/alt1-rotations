@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 import './abilityRotationVisualizer.css'
 import { Ability, abilitiesMap } from '../abilities'
+import { Dropdown } from './Dropdown'
 
 type AbilityRotationVisualizerProps = {
   size: number
@@ -27,7 +28,6 @@ export const AbilityRotationVisualizer = ({
     currentTick: 0,
   })
   const [started, setStarted] = useState(false)
-  const [abilityRotationName, setAbilityRotationName] = useState('')
 
   const handleButtonStart = () => {
     setStarted(true)
@@ -37,16 +37,13 @@ export const AbilityRotationVisualizer = ({
     })
   }
 
-  const handleLoad = () => {
-    const abilityRotationText = localStorage.getItem(abilityRotationName)
-    if (abilityRotationText) {
-      setAbilityRotation(JSON.parse(abilityRotationText))
-      setStarted(false)
-      setMagicState({
-        currentIndex: 0,
-        currentTick: 0,
-      })
-    }
+  function handleStateFromDropdown(newValue: SetStateAction<Ability[]>) {
+    setAbilityRotation(newValue)
+    setStarted(false)
+    setMagicState({
+      currentIndex: 0,
+      currentTick: 0,
+    })
   }
 
   useEffect(() => {
@@ -79,14 +76,7 @@ export const AbilityRotationVisualizer = ({
   return (
     <div>
       <button onClick={handleButtonStart}>Start</button>
-      <div className="ability-rotation-visualizer-load-rotation-container">
-        <input
-          className="ability-rotation-loader-input"
-          value={abilityRotationName}
-          onChange={(e) => setAbilityRotationName(e.target.value)}
-        ></input>
-        <button onClick={handleLoad}>Load</button>
-      </div>
+      <Dropdown change={handleStateFromDropdown} />
       <p>tick: {magicState.currentTick}</p>
       <div className="rotation-visualizer-items-outer-container">
         <div className="rotation-visualizer-items-container">
