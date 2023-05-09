@@ -154,9 +154,6 @@ export const AbilityRotationVisualizer = () => {
 
   return (
     <div>
-      <p>startPositions:{startPositions}</p>
-      <p>size:{size}</p>
-      <p>blockWidth:{blockContainerWidth}</p>
       <div className="visualizer__items-outer-container">
         <div ref={elementRef} className="visualizer__items-container">
           {abilityRotation
