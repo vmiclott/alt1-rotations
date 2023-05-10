@@ -49,7 +49,7 @@ export const AbilityRotationCreator = () => {
         onChange={(e) => setNewAbilityRotationName(e.target.value)}
       ></input>
       <button className="ability-button" onClick={handleAbilityRotationSubmit}>
-        Send
+        Save
       </button>
     </form>
   )

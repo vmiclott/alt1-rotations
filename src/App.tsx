@@ -26,7 +26,6 @@ const goodRotation: Ability[] = [
 function App() {
   return (
     <div className="app-container">
-      <AbilityRotationCreator />
       <AbilityRotationVisualizer size={5}></AbilityRotationVisualizer>
     </div>
   )

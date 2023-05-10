@@ -2,6 +2,7 @@ import { SetStateAction, useEffect, useState } from 'react'
 import './abilityRotationVisualizer.css'
 import { Ability, abilitiesMap } from '../abilities'
 import { Dropdown } from './Dropdown'
+import { AbilityRotationCreator } from './AbilityRotationCreator'
 
 type AbilityRotationVisualizerProps = {
   size: number
@@ -74,40 +75,49 @@ export const AbilityRotationVisualizer = ({
   }, [started])
 
   return (
-    <div>
-      <button onClick={handleButtonStart}>Start</button>
-      <Dropdown change={handleStateFromDropdown} />
-      <p>tick: {magicState.currentTick}</p>
-      <div className="rotation-visualizer-items-outer-container">
-        <div className="rotation-visualizer-items-container">
-          {abilityRotation
-            .slice(magicState.currentIndex, magicState.currentIndex + size)
-            .map(({ name, tick }, idx) => (
-              <div
-                className="rotation-visualizer-item-outer-container"
-                key={idx}
-              >
+    <>
+      <div>
+        {<button onClick={handleButtonStart}>Start</button>}
+        {<p>tick: {magicState.currentTick}</p>}
+        <div className="rotation-visualizer-items-outer-container">
+          <div className="rotation-visualizer-items-container">
+            {abilityRotation
+              .slice(magicState.currentIndex, magicState.currentIndex + size)
+              .map(({ name, tick }, idx) => (
                 <div
-                  draggable="false"
-                  className="rotation-visualizer-item-container"
+                  className="rotation-visualizer-item-outer-container"
+                  key={idx}
                 >
-                  <div className={`rotation-visualizer-item-${idx}`}>
-                    <img
-                      src={abilitiesMap[name]}
-                      width="50"
-                      height="50"
-                      className={
-                        tick === magicState.currentTick
-                          ? 'rotation-visualizer-item-active'
-                          : ''
-                      }
-                    />
+                  <div
+                    draggable="false"
+                    className="rotation-visualizer-item-container"
+                  >
+                    <div className={`rotation-visualizer-item-${idx}`}>
+                      <img
+                        src={abilitiesMap[name]}
+                        width="50"
+                        height="50"
+                        className={
+                          tick === magicState.currentTick
+                            ? 'rotation-visualizer-item-active'
+                            : ''
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div className="nisseperator relative"></div>
+
+      <AbilityRotationCreator />
+      <div className="nisseperator relative"></div>
+      <div className="visualizer-load-container">
+        <h2>Load rotation</h2>
+        <Dropdown change={handleStateFromDropdown} />
+      </div>
+    </>
   )
 }

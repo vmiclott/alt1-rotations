@@ -1,0 +1,38 @@
+.dropdown {
+  width: 200px;
+  border: 1px solid white;
+  height: 30px;
+  font-size: 1rem;
+  align-items: center;
+  background: var(--nis-col-back);
+
+  &__opener {
+    margin: 0 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  &__content {
+    padding-top: 4px;
+    border: 1px solid white;
+    border-top: none;
+  }
+
+  &__content > p {
+    margin: 0;
+    padding: 0.375rem 0.88rem;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    min-width: 140px;
+    background: var(--nis-col-back);
+  }
+
+  &__content p:hover {
+    color: #fff;
+    background-color: #0062cc;
+  }
+
+  &__content > p:last-child {
+    border-bottom: 0 none;
+  }
+}

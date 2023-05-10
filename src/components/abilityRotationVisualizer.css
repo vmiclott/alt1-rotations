@@ -69,3 +69,9 @@
 .ability-rotation-loader-input {
   color: black;
 }
+
+.visualizer-load-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}

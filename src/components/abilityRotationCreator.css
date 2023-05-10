@@ -1,5 +1,9 @@
 .new-ability-rotation-input {
-  color: black;
+  font-size: 1rem;
+  color: white;
+  background: var(--nis-col-back);
+  border: 1px solid white;
+  margin: 0 5px;
 }
 
 .ability-input-form {
