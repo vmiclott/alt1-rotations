@@ -115,7 +115,7 @@ export const AbilityRotationVisualizer = ({
       <AbilityRotationCreator />
       <div className="nisseperator relative"></div>
       <div className="visualizer-load-container">
-        <h2>Load rotation</h2>
+        <label>Load rotation</label>
         <Dropdown change={handleStateFromDropdown} />
       </div>
     </>

@@ -3,7 +3,3 @@
 .app-container {
   padding: 1rem;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

@@ -9,15 +9,16 @@ const Icon = () => {
   )
 }
 
-export const Dropdown = ({ change }) => {
-  const [open, setOpen] = useState(false)
+export const Dropdown = ({ change }: { change: any }) => {
+  const [isOpen, setIsOpen] = useState(false)
   const [abilityRotationNames, setAbilityRotationNames] = useState([])
-  const handleOpen = () => {
-    setOpen(!open)
+  const [shownOption, setShownOption] = useState('Select...')
+  const handleIsOpen = () => {
+    setIsOpen(!isOpen)
   }
   useEffect(() => {
-    setOpen(open)
-  }, [open])
+    setIsOpen(isOpen)
+  }, [isOpen])
 
   useEffect(() => {
     const rotationNames = localStorage.getItem('abilityRotationNames')
@@ -37,27 +38,30 @@ export const Dropdown = ({ change }) => {
     } else {
       console.error('Rotation not found from localStorage')
     }
-    setOpen(false)
   }
 
   return (
-    <div className="dropdown">
-      <div className="dropdown__opener" onClick={(): void => handleOpen()}>
-        Select...
+    <div className="dropdown" onClick={(): void => handleIsOpen()}>
+      <div tabIndex={0} className="dropdown__input-container">
+        <span className="dropdown__value">{shownOption}</span>
         <Icon />
       </div>
-      {open && (
-        <div className="dropdown__content">
-          {abilityRotationNames.map((rotationName) => (
-            <p
-              key={rotationName}
-              onClick={(): void => onClickHandler(rotationName)}
-            >
-              {rotationName}
-            </p>
-          ))}
-        </div>
-      )}
+      <ul className={`dropdown__options ${isOpen ? '--show' : ''}`}>
+        {abilityRotationNames.map((rotationName) => (
+          <li
+            key={rotationName}
+            onClick={(e) => {
+              e.stopPropagation()
+              setShownOption(rotationName)
+              onClickHandler(rotationName)
+              setIsOpen(false)
+            }}
+            className="dropdown__option"
+          >
+            {rotationName}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

@@ -1,32 +1,56 @@
-.new-ability-rotation-input {
-  font-size: 1rem;
-  color: white;
-  background: var(--nis-col-back);
-  border: 1px solid white;
-  margin: 0 5px;
-}
+.ability-rotation-creator {
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
 
-.ability-input-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  gap: 0.5rem;
-}
+  &__rotation-textarea {
+    font-size: 1rem;
+    color: var(--nis-col-std);
+    width: 15rem;
+    height: 10rem;
+    font-family: 'Oswald, sans-serif';
+    padding: 0 1rem;
+    background: var(--nis-col-back);
+    cursor: auto;
+  }
 
-.ability-input {
-  width: 20rem;
-  height: 10rem;
-  font-family: 'Oswald, sans-serif';
-  padding: 0 1rem;
-  background: var(--nis-col-back);
-  cursor: auto;
-}
+  &__save-container {
+    display: flex;
+    justify-content: center;
+  }
 
-.ability-button {
-  background: var(--nis-col-back);
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  padding: 1rem;
+  &__name-input {
+    margin: 0;
+    padding: 0;
+    width: 14rem;
+    background: var(--nis-col-back);
+    border: 1px solid var(--nis-col-faded);
+    display: flex;
+    height: 2rem;
+    font-size: 1rem;
+    color: var(--nis-col-std);
+    border-right: 0.1rem solid var(--nis-col-faded);
+  }
+
+  &__button {
+    border: 1px solid var(--nis-col-faded);
+    margin: 0;
+    padding: 0;
+    width: 3rem;
+    color: var(--nis-col-std);
+    background: var(--nis-col-back);
+    align-items: center;
+    justify-content: center;
+    border-left: none;
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      background-color: #0062cc;
+    }
+  }
 }
