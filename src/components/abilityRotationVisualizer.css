@@ -1,71 +1,14 @@
-.rotation-visualizer-items-outer-container {
-  position: relative;
-  overflow: hidden;
-}
+.visualizer {
+  &__items-outer-container {
+    position: relative;
+    overflow: hidden;
+    height: 104px;
+  }
 
-.rotation-visualizer-items-container {
-  position: relative;
-  width: 100%;
-  height: 50px;
-}
-
-.rotation-visualizer-item-outer-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.rotation-visualizer-item-container {
-  height: 100%;
-  user-select: none;
-  touch-action: pan-y;
-  transform-origin: 50% 50% 0px;
-}
-
-.rotation-visualizer-item-0 {
-  position: relative;
-  height: 100%;
-  opacity: 1;
-  z-index: 1;
-  transform: translateX(0%);
-}
-
-.rotation-visualizer-item-1 {
-  position: relative;
-  height: 100%;
-  opacity: 1;
-  z-index: 1;
-  transform: translateX(20%);
-}
-
-.rotation-visualizer-item-2 {
-  position: relative;
-  height: 100%;
-  opacity: 1;
-  z-index: 1;
-  transform: translateX(40%);
-}
-
-.rotation-visualizer-item-3 {
-  position: relative;
-  height: 100%;
-  opacity: 1;
-  z-index: 1;
-  transform: translateX(60%);
-}
-
-.rotation-visualizer-item-4 {
-  position: relative;
-  height: 100%;
-  opacity: 1;
-  z-index: 1;
-  transform: translateX(80%);
-}
-
-.rotation-visualizer-item-active {
-  border: green solid 2px;
-}
-
-.ability-rotation-loader-input {
-  color: black;
+  &__items-container {
+    display: flex;
+    flex-flow: row;
+    position: relative;
+    width: 100%;
+  }
 }
