@@ -68,15 +68,7 @@ export const AbilityRotationVisualizer = () => {
         )
       }
     }
-
-    if (elementRef.current?.clientWidth) {
-      setSize(Math.floor(elementRef.current.clientWidth / 80) | 1)
-      setStartPositions(elementRef.current.clientWidth / 2 - 25)
-      setBlockContainerWidth(
-        elementRef.current.clientWidth /
-          Math.floor(elementRef.current.clientWidth / 80)
-      )
-    }
+    handleResize()
 
     window.addEventListener('resize', handleResize)
     return () => {
