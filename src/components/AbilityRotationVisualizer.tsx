@@ -1,15 +1,14 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './abilityRotationVisualizer.css'
-import { Ability, abilitiesMap } from '../abilities'
+import { Ability } from '../abilities'
+import { AbilityIcon } from './AbilityIcon'
 
 const defaultRotation: Ability[] = [
-  { name: 'resonance', tick: -1 },
-  { name: 'sever', tick: -1 },
   { name: 'resonance', tick: 0 },
   { name: 'sever', tick: 3 },
-  { name: 'wrack', tick: 6 },
-  { name: 'combust', tick: 7 },
-  { name: 'resonance', tick: 9 },
+  { name: 'wrack', tick: 3 },
+  { name: 'combust', tick: 3 },
+  { name: 'resonance', tick: 6 },
   { name: 'sever', tick: 9 },
   { name: 'punish', tick: 12 },
   { name: 'preparation', tick: 12 },
@@ -41,21 +40,16 @@ export const AbilityRotationVisualizer = () => {
   })
   const [started, setStarted] = useState(false)
   const [abilityRotationName, setAbilityRotationName] = useState('')
-  const [size, setSize] = useState(0)
+  const [middleOfScreen, setMiddleOfScreen] = useState(0)
   const elementRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleResize() {
       if (elementRef.current?.clientWidth) {
-        // Set how many abilities are showing (odd)
-        // 80 comes from 50px img width + 30px gap
-        setSize(Math.floor(elementRef.current.clientWidth / 80) | 1)
+        setMiddleOfScreen(elementRef.current.clientWidth / 2)
       }
     }
-
-    if (elementRef.current?.clientWidth) {
-      setSize(Math.floor(elementRef.current.clientWidth / 80) | 1)
-    }
+    handleResize()
 
     window.addEventListener('resize', handleResize)
     return () => {
@@ -63,7 +57,6 @@ export const AbilityRotationVisualizer = () => {
     }
   }, [elementRef])
 
-  const offSet = Math.floor(size / 2)
   const handleButtonStart = () => {
     setStarted(true)
     setMagicState({
@@ -78,7 +71,7 @@ export const AbilityRotationVisualizer = () => {
       setAbilityRotation(JSON.parse(abilityRotationText))
       setStarted(false)
       setMagicState({
-        currentIndex: 0,
+        currentIndex: 0, // currently highlighted ability index
         currentTick: 0,
       })
     }
@@ -90,19 +83,14 @@ export const AbilityRotationVisualizer = () => {
       setMagicState((magicState) => {
         const nextIndex = findNextIndex(
           abilityRotation,
-          magicState.currentIndex + offSet
+          magicState.currentIndex
         )
-        const newAbility = abilityRotation[nextIndex]
         const newTick = magicState.currentTick + 1
-        let newIndex = magicState.currentIndex + offSet
-        if (newAbility) {
-          if (newAbility.tick === newTick) {
-            newIndex = nextIndex
-          }
-        }
-
         return {
-          currentIndex: newIndex - offSet,
+          currentIndex:
+            newTick === abilityRotation[nextIndex].tick
+              ? nextIndex
+              : magicState.currentIndex,
           currentTick: newTick,
         }
       })
@@ -113,30 +101,18 @@ export const AbilityRotationVisualizer = () => {
 
   return (
     <div>
-      <div ref={elementRef} className="visualizer__items-outer-container">
-        <div className="visualizer__items-container">
-          {abilityRotation
-            .slice(magicState.currentIndex, magicState.currentIndex + size)
-            .map(({ name, tick }, idx) => (
-              <div className="visualizer__item-outer-container" key={idx}>
-                <div draggable="false" className="visualizer__item-container">
-                  <div
-                    style={{ transform: `translateX(${(100 / size) * idx}%` }}
-                  >
-                    <img
-                      src={abilitiesMap[name]}
-                      width="50"
-                      height="50"
-                      className={
-                        tick === magicState.currentTick
-                          ? 'visualizer__items --active'
-                          : ''
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
+      <div className="visualizer__items-outer-container">
+        <div ref={elementRef} className="visualizer__items-container">
+          {abilityRotation.map(({ name, tick }, idx) => (
+            <AbilityIcon
+              key={idx}
+              abilityIndex={idx}
+              currentIndex={magicState.currentIndex}
+              middleOfScreen={middleOfScreen}
+              abilityName={name}
+              isActive={tick === magicState.currentTick}
+            />
+          ))}
         </div>
       </div>
       <div>

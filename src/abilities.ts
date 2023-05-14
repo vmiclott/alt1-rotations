@@ -225,9 +225,9 @@ export const abilitiesMap = {
   rout: Rout,
 } as const
 
-type abilityName = keyof typeof abilitiesMap
+export type AbilityName = keyof typeof abilitiesMap
 
 export type Ability = {
-  name: abilityName
+  name: AbilityName
   tick: number
 }
