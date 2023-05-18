@@ -1,0 +1,14 @@
+.button {
+  border: 1px solid var(--nis-col-faded);
+  height: 2rem;
+  width: 3rem;
+  color: var(--nis-col-std);
+  background: var(--nis-col-back);
+  align-items: center;
+  justify-content: center;
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    background-color: #0062cc;
+  }
+}

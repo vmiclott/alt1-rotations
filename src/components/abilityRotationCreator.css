@@ -38,19 +38,6 @@
   }
 
   &__button {
-    border: 1px solid var(--nis-col-faded);
-    margin: 0;
-    padding: 0;
-    width: 3rem;
-    color: var(--nis-col-std);
-    background: var(--nis-col-back);
-    align-items: center;
-    justify-content: center;
     border-left: none;
-    &:focus,
-    &:hover {
-      cursor: pointer;
-      background-color: #0062cc;
-    }
   }
 }

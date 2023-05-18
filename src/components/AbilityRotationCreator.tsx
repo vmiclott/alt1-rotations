@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './abilityRotationCreator.css'
+import { Button } from './Button'
 
 export const AbilityRotationCreator = () => {
   const [abilityRotationText, setAbilityRotationText] = useState('')
@@ -50,12 +51,12 @@ export const AbilityRotationCreator = () => {
           value={newAbilityRotationName}
           onChange={(e) => setNewAbilityRotationName(e.target.value)}
         ></input>
-        <button
+        <Button
           className="ability-rotation-creator__button"
           onClick={handleAbilityRotationSubmit}
         >
           Save
-        </button>
+        </Button>
       </div>
     </form>
   )
