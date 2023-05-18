@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AbilityRotationVisualizer } from './components/AbilityRotationVisualizer'
 import { TabLayout } from './components/TabLayout'
 import { AbilityRotationCreator } from './components/AbilityRotationCreator'
 import { AbilityRotationLoader } from './components/AbilityRotationLoader'
 import { Ability } from './abilities'
+import './app.css'
 
 const defaultRotation: Ability[] = [
   { name: 'resonance', tick: 0 },
@@ -25,6 +26,14 @@ const defaultRotation: Ability[] = [
 function App() {
   const [abilityRotation, setAbilityRotation] =
     useState<Ability[]>(defaultRotation)
+
+  useEffect(() => {
+    // redirect magic because we don't know how to set default path to /
+    if (location.pathname.includes('index.html')) {
+      location.replace('./')
+    }
+  }, [])
+
   return (
     <div className="app-container">
       <Router basename="/ability-rotations/">

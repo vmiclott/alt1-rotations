@@ -1,5 +1,6 @@
+import { Ability } from '../abilities'
 import './dropdown.css'
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 
 const Icon = () => {
   return (
@@ -9,16 +10,17 @@ const Icon = () => {
   )
 }
 
-export const Dropdown = ({ change }: { change: any }) => {
+type DropdownProps = {
+  setAbilityRotation: (newValue: Ability[]) => void
+}
+
+export const Dropdown = ({ setAbilityRotation }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [abilityRotationNames, setAbilityRotationNames] = useState([])
   const [shownOption, setShownOption] = useState('Select...')
   const handleIsOpen = () => {
     setIsOpen(!isOpen)
   }
-  useEffect(() => {
-    setIsOpen(isOpen)
-  }, [isOpen])
 
   useEffect(() => {
     const rotationNames = localStorage.getItem('abilityRotationNames')
@@ -31,7 +33,7 @@ export const Dropdown = ({ change }: { change: any }) => {
     const abilityRotationText = localStorage.getItem(rotationName)
     if (abilityRotationText) {
       try {
-        change(JSON.parse(abilityRotationText))
+        setAbilityRotation(JSON.parse(abilityRotationText))
       } catch (e) {
         console.error('invalid json')
       }
@@ -41,7 +43,7 @@ export const Dropdown = ({ change }: { change: any }) => {
   }
 
   return (
-    <div className="dropdown" onClick={(): void => handleIsOpen()}>
+    <div className="dropdown" onClick={handleIsOpen}>
       <div tabIndex={0} className="dropdown__input-container">
         <span className="dropdown__value">{shownOption}</span>
         <Icon />
