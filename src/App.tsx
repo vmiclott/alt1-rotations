@@ -6,6 +6,7 @@ import { AbilityRotationCreator } from './components/AbilityRotationCreator'
 import { AbilityRotationLoader } from './components/AbilityRotationLoader'
 import { Ability } from './abilities'
 import './app.css'
+import { Settings } from './components/Settings'
 
 const defaultRotation: Ability[] = [
   { name: 'resonance', tick: 0 },
@@ -51,6 +52,7 @@ function App() {
               <AbilityRotationLoader setAbilityRotation={setAbilityRotation} />
             }
           />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
         <TabLayout />
       </Router>

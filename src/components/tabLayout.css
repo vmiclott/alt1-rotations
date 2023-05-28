@@ -22,4 +22,11 @@
       border-bottom-color: var(--nis-col-back);
     }
   }
+
+  &__svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    stroke: white;
+  }
 }

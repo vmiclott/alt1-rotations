@@ -1,3 +1,8 @@
+import { HomeSvg } from './HomeSvg'
+import { LoadSvg } from './LoadSvg'
+import { SettingsSvg } from './SettingsSvg'
+import { Svg } from './Svg'
+import { CreatorSvg } from './CreatorSvg'
 import './tabLayout.css'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -11,7 +16,11 @@ export const TabLayout = () => {
           location.pathname === '/' ? '--active' : ''
         }`}
       >
-        Home
+        <Svg
+          className="tab-layout__svg"
+          tooltipText="Home"
+          icon={<HomeSvg />}
+        ></Svg>
       </Link>
       <Link
         to="/creator"
@@ -19,7 +28,11 @@ export const TabLayout = () => {
           location.pathname === '/creator' ? '--active' : ''
         }`}
       >
-        Create
+        <Svg
+          className="tab-layout__svg"
+          tooltipText="Create rotation"
+          icon={<CreatorSvg />}
+        ></Svg>
       </Link>
       <Link
         to="/loader"
@@ -27,7 +40,23 @@ export const TabLayout = () => {
           location.pathname === '/loader' ? '--active' : ''
         }`}
       >
-        Load
+        <Svg
+          className="tab-layout__svg"
+          tooltipText="Load rotation"
+          icon={<LoadSvg />}
+        ></Svg>
+      </Link>
+      <Link
+        to="/settings"
+        className={`tab-layout__link ${
+          location.pathname === '/settings' ? '--active' : ''
+        }`}
+      >
+        <Svg
+          className="tab-layout__svg"
+          tooltipText="Settings"
+          icon={<SettingsSvg />}
+        ></Svg>
       </Link>
     </div>
   )
