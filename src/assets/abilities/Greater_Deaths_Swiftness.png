@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8" />
+<title>Error generating thumbnail</title>
+</head>
+<body>
+<h1>Error generating thumbnail</h1>
+<p>
+The source file 'Greater_Deaths_Swiftness.png' does not exist.
+</p>
+<!-- /images/thumb/Greater_Deaths_Swiftness.png/50px-Greater_Deaths_Swiftness.png -->
+<!-- mediawiki-54f6fcff64-fmpth -->
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7ce5fdad18376d91","version":"2023.4.0","b":1,"token":"6348a5ceb9674fe390473560fffff798","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
