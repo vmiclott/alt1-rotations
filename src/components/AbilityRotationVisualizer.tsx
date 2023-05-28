@@ -1,8 +1,9 @@
 import './abilityRotationVisualizer.css'
-import { SetStateAction, useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Ability } from '../abilities'
 import { AbilityIcon } from './AbilityIcon'
 import { Button } from './Button'
+import BossTimerReader from '@alt1/bosstimer'
 
 const findNextIndex = (abilities: Ability[], currentIndex: number): number => {
   let nextIndex = currentIndex + 1
@@ -44,7 +45,7 @@ export const AbilityRotationVisualizer = ({
     }
   }, [elementRef])
 
-  const handleButtonStart = () => {
+  const handleStart = () => {
     setStarted(true)
     setMagicState({
       currentIndex: 0,
@@ -52,23 +53,43 @@ export const AbilityRotationVisualizer = ({
     })
   }
 
+  const handleReset = () => {
+    setStarted(false)
+    setMagicState({
+      currentIndex: 0,
+      currentTick: 0,
+    })
+  }
+
+  const bossTimerReader = new BossTimerReader()
+
   useEffect(() => {
-    if (!started) return
     const interval = setInterval(() => {
-      setMagicState((magicState) => {
-        const nextIndex = findNextIndex(
-          abilityRotation,
-          magicState.currentIndex
-        )
-        const newTick = magicState.currentTick + 1
-        return {
-          currentIndex:
-            newTick === abilityRotation[nextIndex].tick
-              ? nextIndex
-              : magicState.currentIndex,
-          currentTick: newTick,
-        }
-      })
+      if (!started && bossTimerReader.find() !== null) {
+        handleStart()
+        return
+      } else if (started && bossTimerReader.find() === null) {
+        handleReset()
+        return
+      }
+
+      if (!started) return
+      else {
+        setMagicState((magicState) => {
+          const nextIndex = findNextIndex(
+            abilityRotation,
+            magicState.currentIndex
+          )
+          const newTick = magicState.currentTick + 1
+          return {
+            currentIndex:
+              newTick === abilityRotation[nextIndex].tick
+                ? nextIndex
+                : magicState.currentIndex,
+            currentTick: newTick,
+          }
+        })
+      }
     }, 600)
 
     return () => clearInterval(interval)
@@ -93,9 +114,15 @@ export const AbilityRotationVisualizer = ({
       <div className="visualizer__buttons-container">
         <Button
           className="visualizer__buttons-container__button"
-          onClick={handleButtonStart}
+          onClick={handleStart}
         >
           Start
+        </Button>
+        <Button
+          className="visualizer__buttons-container__button"
+          onClick={handleReset}
+        >
+          Reset
         </Button>
         <p>tick:{magicState.currentTick}</p>
       </div>
