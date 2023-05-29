@@ -1,6 +1,10 @@
+import { BosstimerCheckbox } from './BosstimerCheckbox'
 import './settings.css'
 
 export const Settings = ({}) => {
-  // TODO: use boss timer checkbox
-  return <div className="settings"></div>
+  return (
+    <div className="settings">
+      <BosstimerCheckbox></BosstimerCheckbox>
+    </div>
+  )
 }
