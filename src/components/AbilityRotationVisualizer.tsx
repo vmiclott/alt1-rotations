@@ -30,6 +30,9 @@ export const AbilityRotationVisualizer = ({
   const [started, setStarted] = useState(false)
   const [middleOfScreen, setMiddleOfScreen] = useState(0)
   const elementRef = useRef<HTMLDivElement>(null)
+  const useBosstimer: boolean = localStorage.getItem('bosstimerChecked')
+    ? JSON.parse(localStorage.getItem('bosstimerChecked')!)
+    : true
 
   useEffect(() => {
     function handleResize() {
@@ -65,14 +68,15 @@ export const AbilityRotationVisualizer = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!started && bossTimerReader.find() !== null) {
-        handleStart()
-        return
-      } else if (started && bossTimerReader.find() === null) {
-        handleReset()
-        return
+      if (useBosstimer) {
+        if (!started && bossTimerReader.find() !== null) {
+          handleStart()
+          return
+        } else if (started && bossTimerReader.find() === null) {
+          handleReset()
+          return
+        }
       }
-
       if (!started) return
       else {
         setMagicState((magicState) => {
@@ -111,21 +115,23 @@ export const AbilityRotationVisualizer = ({
           ))}
         </div>
       </div>
-      <div className="visualizer__buttons-container">
-        <Button
-          className="visualizer__buttons-container__button"
-          onClick={handleStart}
-        >
-          Start
-        </Button>
-        <Button
-          className="visualizer__buttons-container__button"
-          onClick={handleReset}
-        >
-          Reset
-        </Button>
-        <p>tick:{magicState.currentTick}</p>
-      </div>
+      {!useBosstimer && (
+        <div className="visualizer__buttons-container">
+          <Button
+            className="visualizer__buttons-container__button"
+            onClick={handleStart}
+          >
+            Start
+          </Button>
+          <Button
+            className="visualizer__buttons-container__button"
+            onClick={handleReset}
+          >
+            Reset
+          </Button>
+        </div>
+      )}
+      <p>tick:{magicState.currentTick}</p>
     </div>
   )
 }

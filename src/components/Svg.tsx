@@ -7,8 +7,8 @@ export type SvgProps = {
 }
 
 export const Svg = ({ icon, tooltipText, className }: SvgProps) => (
-  <div className={`tooltip ${className}`}>
-    <span className="tooltiptext">{tooltipText}</span>
-    {icon}
+  <div className={`svg ${className}`}>
+    <span className="svg__tooltip">{tooltipText}</span>
+    <div className="svg__icon">{icon}</div>
   </div>
 )

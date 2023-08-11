@@ -2,8 +2,14 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  height: 50px;
+  width: 100%;
+  background: var(--nis-col-back);
 
   &__link {
+    display: flex;
+    justify-content: center;
+    width: 25%;
     padding: 10px 20px;
     border: none;
     border-bottom: 2px solid transparent;
