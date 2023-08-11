@@ -201,6 +201,37 @@ import Zamorak_staff from './assets/abilities/Zamorak_staff.png'
 import Zaniks_crossbow from './assets/abilities/Zaniks_crossbow.png'
 import Zaros_godsword from './assets/abilities/Zaros_godsword.png'
 
+// Necro abilities
+import Necromancy from './assets/abilities/Necromancy.png'
+import Conjure_Skeleton_Warrior from './assets/abilities/Conjure_Skeleton_Warrior.png'
+import Finger_of_Death from './assets/abilities/Finger_of_Death.png'
+import Touch_of_Death from './assets/abilities/Touch_of_Death.png'
+import Command_Skeleton_Warrior from './assets/abilities/Command_Skeleton_Warrior.png'
+import Death_Skulls from './assets/abilities/Death_Skulls.png'
+import Blood_Siphon from './assets/abilities/Blood_Siphon.png'
+import Conjure_Putrid_Zombie from './assets/abilities/Conjure_Putrid_Zombie.png'
+import Conjure_Vengeful_Ghost from './assets/abilities/Conjure_Vengeful_Ghost.png'
+import Bloat from './assets/abilities/Bloat.png'
+import Soul_Sap from './assets/abilities/Soul_Sap.png'
+import Soul_Strike from './assets/abilities/Soul_Strike.png'
+import Command_Putrid_Zombie from './assets/abilities/Command_Putrid_Zombie.png'
+import Command_Vengeful_Ghost from './assets/abilities/Command_Vengeful_Ghost.png'
+import Spectral_Scythe from './assets/abilities/Spectral_Scythe.png'
+import Spectral_Scythe_2 from './assets/abilities/Spectral_Scythe_2.png'
+import Spectral_Scythe_3 from './assets/abilities/Spectral_Scythe_3.png'
+import Volley_of_Souls from './assets/abilities/Volley_of_Souls.png'
+import Living_Death from './assets/abilities/Living_Death.png'
+
+// Necro incantations
+import City_of_Um_Teleport from './assets/abilities/City_of_Um_Teleport.png'
+import Lesser_Bone_Shield from './assets/abilities/Lesser_Bone_Shield.png'
+import Threads_of_Fate from './assets/abilities/Threads_of_Fate.png'
+import Greater_Bone_Shield from './assets/abilities/Greater_Bone_Shield.png'
+import Life_Transfer from './assets/abilities/Life_Transfer.png'
+import Invoke_Death from './assets/abilities/Invoke_Death.png'
+import Darkness from './assets/abilities/Darkness.png'
+import Split_Soul from './assets/abilities/Split_Soul.png'
+
 export const abilitiesMap = {
   abyssalVineWhip: Abyssal_vine_whip,
   aggressiveStance: Aggressive_Stance,
@@ -404,6 +435,33 @@ export const abilitiesMap = {
   zamorakStaff: Zamorak_staff,
   zaniksCrossbow: Zaniks_crossbow,
   zarosGodsword: Zaros_godsword,
+  necromancy: Necromancy,
+  conjureSkeletonWarrior: Conjure_Skeleton_Warrior,
+  fingerOfDeath: Finger_of_Death,
+  touchOfDeath: Touch_of_Death,
+  commandSkeletonWarrior: Command_Skeleton_Warrior,
+  deathSkulls: Death_Skulls,
+  bloodSiphon: Blood_Siphon,
+  conjurePutridZombie: Conjure_Putrid_Zombie,
+  conjureVengefulGhost: Conjure_Vengeful_Ghost,
+  bloat: Bloat,
+  soulSap: Soul_Sap,
+  soulStrike: Soul_Strike,
+  commandPutridZombie: Command_Putrid_Zombie,
+  commandVengefulGhost: Command_Vengeful_Ghost,
+  spectralScythe: Spectral_Scythe,
+  spectralScythe2: Spectral_Scythe_2,
+  spectralScythe3: Spectral_Scythe_3,
+  volleyOfSouls: Volley_of_Souls,
+  livingDeath: Living_Death,
+  cityOfUmTeleport: City_of_Um_Teleport,
+  lesserBoneShield: Lesser_Bone_Shield,
+  threadsOfFate: Threads_of_Fate,
+  greaterBoneShield: Greater_Bone_Shield,
+  lifeTransfer: Life_Transfer,
+  invokeDeath: Invoke_Death,
+  darkness: Darkness,
+  splitSoul: Split_Soul,
 } as const
 
 export type AbilityName = keyof typeof abilitiesMap
