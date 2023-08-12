@@ -87,7 +87,7 @@ export const AbilityRotationVisualizer = ({
           const newTick = magicState.currentTick + 1
           return {
             currentIndex:
-              newTick === abilityRotation[nextIndex].tick
+              newTick === abilityRotation[nextIndex]?.tick
                 ? nextIndex
                 : magicState.currentIndex,
             currentTick: newTick,
