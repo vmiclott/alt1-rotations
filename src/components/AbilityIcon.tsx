@@ -7,6 +7,7 @@ type AbilityIconProps = {
   abilityIndex: number
   currentIndex: number
   middleOfScreen: number
+  keybind: string
 }
 
 const iconSize = 50
@@ -18,6 +19,7 @@ export const AbilityIcon = ({
   abilityIndex,
   currentIndex,
   middleOfScreen,
+  keybind,
 }: AbilityIconProps) => {
   const marginLeft = `${
     middleOfScreen + (abilityIndex - currentIndex) * iconSize - iconSize / 2
@@ -38,6 +40,7 @@ export const AbilityIcon = ({
               isActive ? '--active' : '--inactive'
             }`}
           />
+          <div className="centered">{keybind}</div>
         </div>
       </div>
     </div>

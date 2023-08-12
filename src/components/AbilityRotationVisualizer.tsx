@@ -87,7 +87,7 @@ export const AbilityRotationVisualizer = ({
           const newTick = magicState.currentTick + 1
           return {
             currentIndex:
-              newTick === abilityRotation[nextIndex].tick
+              newTick === abilityRotation[nextIndex]?.tick
                 ? nextIndex
                 : magicState.currentIndex,
             currentTick: newTick,
@@ -103,7 +103,7 @@ export const AbilityRotationVisualizer = ({
     <div className="visualizer">
       <div className="visualizer__items-outer-container">
         <div ref={elementRef} className="visualizer__items-container">
-          {abilityRotation.map(({ name, tick }, idx) => (
+          {abilityRotation.map(({ name, tick, keybind }, idx) => (
             <AbilityIcon
               key={idx}
               abilityIndex={idx}
@@ -111,6 +111,7 @@ export const AbilityRotationVisualizer = ({
               middleOfScreen={middleOfScreen}
               abilityName={name}
               isActive={tick === magicState.currentTick}
+              keybind={keybind}
             />
           ))}
         </div>
