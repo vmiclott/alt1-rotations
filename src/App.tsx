@@ -9,19 +9,13 @@ import './app.css'
 import { Settings } from './components/Settings'
 
 const defaultRotation: Ability[] = [
-  { name: 'resonance', tick: 0 },
-  { name: 'sever', tick: 3 },
-  { name: 'wrack', tick: 3 },
-  { name: 'combust', tick: 3 },
-  { name: 'resonance', tick: 6 },
-  { name: 'sever', tick: 9 },
-  { name: 'punish', tick: 12 },
-  { name: 'preparation', tick: 12 },
-  { name: 'anticipation', tick: 15 },
-  { name: 'barricade', tick: 18 },
-  { name: 'berserk', tick: 21 },
-  { name: 'sever', tick: 24 },
-  { name: 'resonance', tick: 27 },
+  { name: 'commandVengefulGhost', tick: 0, keybind: 'E' },
+  { name: 'commandSkeletonWarrior', tick: 0, keybind: 'S' },
+  { name: 'deathSkulls', tick: 3, keybind: '5' },
+  { name: 'touchOfDeath', tick: 6, keybind: '2' },
+  { name: 'fingerOfDeath', tick: 9, keybind: 'Q' },
+  { name: 'weaponSpecialAttack', tick: 12, keybind: 'O' },
+  { name: 'fingerOfDeath', tick: 15, keybind: 'Q' },
 ]
 
 function App() {

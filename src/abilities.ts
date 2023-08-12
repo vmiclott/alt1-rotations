@@ -468,4 +468,5 @@ export type AbilityName = keyof typeof abilitiesMap
 export type Ability = {
   name: AbilityName
   tick: number
+  keybind: string
 }
