@@ -16,6 +16,8 @@ import Berserk from './assets/abilities/Berserk.png'
 import Binding_Shot from './assets/abilities/Binding_Shot.png'
 import Bladed_Dive from './assets/abilities/Bladed_Dive.png'
 import Blank from './assets/abilities/Blank.png'
+import Bloat from './assets/abilities/Bloat.png'
+import Blood_Siphon from './assets/abilities/Blood_Siphon.png'
 import Blood_Tendrils from './assets/abilities/Blood_Tendrils.png'
 import Bombardment from './assets/abilities/Bombardment.png'
 import Bone_dagger from './assets/abilities/Bone_dagger.png'
@@ -24,17 +26,26 @@ import Brackish_blade from './assets/abilities/Brackish_blade.png'
 import Brine_sabre from './assets/abilities/Brine_sabre.png'
 import Chain from './assets/abilities/Chain.png'
 import Chaos_Roar from './assets/abilities/Chaos_Roar.png'
+import City_of_Um_Teleport from './assets/abilities/City_of_Um_Teleport.png'
 import Cleave from './assets/abilities/Cleave.png'
 import Combust from './assets/abilities/Combust.png'
+import Command_Putrid_Zombie from './assets/abilities/Command_Putrid_Zombie.png'
+import Command_Skeleton_Warrior from './assets/abilities/Command_Skeleton_Warrior.png'
+import Command_Vengeful_Ghost from './assets/abilities/Command_Vengeful_Ghost.png'
 import Concentrated_Blast from './assets/abilities/Concentrated_Blast.png'
+import Conjure_Putrid_Zombie from './assets/abilities/Conjure_Putrid_Zombie.png'
+import Conjure_Skeleton_Warrior from './assets/abilities/Conjure_Skeleton_Warrior.png'
+import Conjure_Vengeful_Ghost from './assets/abilities/Conjure_Vengeful_Ghost.png'
 import Corruption_Blast from './assets/abilities/Corruption_Blast.png'
 import Corruption_Shot from './assets/abilities/Corruption_Shot.png'
 import Crystal_hatchet from './assets/abilities/Crystal_hatchet.png'
 import Dark_Shard_of_Leng from './assets/abilities/Dark_Shard_of_Leng.png'
 import Dark_bow from './assets/abilities/Dark_bow.png'
 import Darklight from './assets/abilities/Darklight.png'
+import Darkness from './assets/abilities/Darkness.png'
 import Dazing_Shot from './assets/abilities/Dazing_Shot.png'
 import Deadshot from './assets/abilities/Deadshot.png'
+import Death_Skulls from './assets/abilities/Death_Skulls.png'
 import Deaths_Swiftness from './assets/abilities/Deaths_Swiftness.png'
 import Debilitate from './assets/abilities/Debilitate.png'
 import Decimate from './assets/abilities/Decimate.png'
@@ -60,6 +71,7 @@ import EkZekKil from './assets/abilities/EkZekKil.png'
 import Eldritch_crossbow from './assets/abilities/Eldritch_crossbow.png'
 import Escape from './assets/abilities/Escape.png'
 import Essence_of_Finality from './assets/abilities/Essence_of_Finality.png'
+import Finger_of_Death from './assets/abilities/Finger_of_Death.png'
 import Flurry from './assets/abilities/Flurry.png'
 import Forceful_Backhand from './assets/abilities/Forceful_Backhand.png'
 import Fractured_Staff_of_Armadyl from './assets/abilities/Fractured_Staff_of_Armadyl.png'
@@ -73,6 +85,7 @@ import Golden_Touch from './assets/abilities/Golden_Touch.png'
 import Golden_Zamorak_godsword from './assets/abilities/Golden_Zamorak_godsword.png'
 import Granite_maul from './assets/abilities/Granite_maul.png'
 import Greater_Barge from './assets/abilities/Greater_Barge.png'
+import Greater_Bone_Shield from './assets/abilities/Greater_Bone_Shield.png'
 import Greater_Chain from './assets/abilities/Greater_Chain.png'
 import Greater_Concentrated_Blast from './assets/abilities/Greater_Concentrated_Blast.png'
 import Greater_Dazing_Shot from './assets/abilities/Greater_Dazing_Shot.png'
@@ -96,10 +109,12 @@ import Impact from './assets/abilities/Impact.png'
 import Incendiary_Shot from './assets/abilities/Incendiary_Shot.png'
 import Incite from './assets/abilities/Incite.png'
 import Ingenuity_of_the_Humans from './assets/abilities/Ingenuity_of_the_Humans.png'
+import Invoke_Death from './assets/abilities/Invoke_Death.png'
 import Keenblade from './assets/abilities/Keenblade.png'
 import Kick from './assets/abilities/Kick.png'
 import Korasis_sword from './assets/abilities/Korasis_sword.png'
 import Lava_whip from './assets/abilities/Lava_whip.png'
+import Lesser_Bone_Shield from './assets/abilities/Lesser_Bone_Shield.png'
 import Lesser_Combust from './assets/abilities/Lesser_Combust.png'
 import Lesser_Concentrated_Blast from './assets/abilities/Lesser_Concentrated_Blast.png'
 import Lesser_Dazing_Shot from './assets/abilities/Lesser_Dazing_Shot.png'
@@ -112,7 +127,9 @@ import Lesser_Sever from './assets/abilities/Lesser_Sever.png'
 import Lesser_Smash from './assets/abilities/Lesser_Smash.png'
 import Lesser_Snipe from './assets/abilities/Lesser_Snipe.png'
 import Lesser_Sonic_Wave from './assets/abilities/Lesser_Sonic_Wave.png'
+import Life_Transfer from './assets/abilities/Life_Transfer.png'
 import Limitless from './assets/abilities/Limitless.png'
+import Living_Death from './assets/abilities/Living_Death.png'
 import Lucky_Saradomin_sword from './assets/abilities/Lucky_Saradomin_sword.png'
 import Lucky_Zamorakian_spear from './assets/abilities/Lucky_Zamorakian_spear.png'
 import Lucky_abyssal_whip from './assets/abilities/Lucky_abyssal_whip.png'
@@ -125,6 +142,7 @@ import Metamorphosis from './assets/abilities/Metamorphosis.png'
 import Meteor_Strike from './assets/abilities/Meteor_Strike.png'
 import Mindspike_air from './assets/abilities/Mindspike_air.png'
 import Natural_Instinct from './assets/abilities/Natural_Instinct.png'
+import Necromancy from './assets/abilities/Necromancy.png'
 import Needle_Strike from './assets/abilities/Needle_Strike.png'
 import Noxious_longbow from './assets/abilities/Noxious_longbow.png'
 import Noxious_scythe from './assets/abilities/Noxious_scythe.png'
@@ -167,10 +185,17 @@ import Shock from './assets/abilities/Shock.png'
 import Slaughter from './assets/abilities/Slaughter.png'
 import Slice from './assets/abilities/Slice.png'
 import Smash from './assets/abilities/Smash.png'
+import Smoke_Cloud from './assets/abilities/Smoke_Cloud.png'
 import Smoke_Tendrils from './assets/abilities/Smoke_Tendrils.png'
 import Snap_Shot from './assets/abilities/Snap_Shot.png'
 import Snipe from './assets/abilities/Snipe.png'
 import Sonic_Wave from './assets/abilities/Sonic_Wave.png'
+import Soul_Sap from './assets/abilities/Soul_Sap.png'
+import Soul_Strike from './assets/abilities/Soul_Strike.png'
+import Spectral_Scythe from './assets/abilities/Spectral_Scythe.png'
+import Spectral_Scythe_2 from './assets/abilities/Spectral_Scythe_2.png'
+import Spectral_Scythe_3 from './assets/abilities/Spectral_Scythe_3.png'
+import Split_Soul from './assets/abilities/Split_Soul.png'
 import Staff_of_Sliske from './assets/abilities/Staff_of_Sliske.png'
 import Staff_of_darkness from './assets/abilities/Staff_of_darkness.png'
 import Staff_of_light from './assets/abilities/Staff_of_light.png'
@@ -187,11 +212,14 @@ import Superior_Zuriels_staff from './assets/abilities/Superior_Zuriels_staff.pn
 import Superior_ancient_mace from './assets/abilities/Superior_ancient_mace.png'
 import Superior_bloodied_kyzaj from './assets/abilities/Superior_bloodied_kyzaj.png'
 import Surge from './assets/abilities/Surge.png'
+import Threads_of_Fate from './assets/abilities/Threads_of_Fate.png'
 import Tight_Bindings from './assets/abilities/Tight_Bindings.png'
+import Touch_of_Death from './assets/abilities/Touch_of_Death.png'
 import Transfigure from './assets/abilities/Transfigure.png'
 import Tsunami from './assets/abilities/Tsunami.png'
 import Tuskas_Wrath from './assets/abilities/Tuskas_Wrath.png'
 import Unload from './assets/abilities/Unload.png'
+import Volley_of_Souls from './assets/abilities/Volley_of_Souls.png'
 import Weapon_Special_attack from './assets/abilities/Weapon_Special_attack.png'
 import Wild_Magic from './assets/abilities/Wild_Magic.png'
 import Wrack from './assets/abilities/Wrack.png'
@@ -200,37 +228,6 @@ import Zamorak_bow from './assets/abilities/Zamorak_bow.png'
 import Zamorak_staff from './assets/abilities/Zamorak_staff.png'
 import Zaniks_crossbow from './assets/abilities/Zaniks_crossbow.png'
 import Zaros_godsword from './assets/abilities/Zaros_godsword.png'
-
-// Necro abilities
-import Necromancy from './assets/abilities/Necromancy.png'
-import Conjure_Skeleton_Warrior from './assets/abilities/Conjure_Skeleton_Warrior.png'
-import Finger_of_Death from './assets/abilities/Finger_of_Death.png'
-import Touch_of_Death from './assets/abilities/Touch_of_Death.png'
-import Command_Skeleton_Warrior from './assets/abilities/Command_Skeleton_Warrior.png'
-import Death_Skulls from './assets/abilities/Death_Skulls.png'
-import Blood_Siphon from './assets/abilities/Blood_Siphon.png'
-import Conjure_Putrid_Zombie from './assets/abilities/Conjure_Putrid_Zombie.png'
-import Conjure_Vengeful_Ghost from './assets/abilities/Conjure_Vengeful_Ghost.png'
-import Bloat from './assets/abilities/Bloat.png'
-import Soul_Sap from './assets/abilities/Soul_Sap.png'
-import Soul_Strike from './assets/abilities/Soul_Strike.png'
-import Command_Putrid_Zombie from './assets/abilities/Command_Putrid_Zombie.png'
-import Command_Vengeful_Ghost from './assets/abilities/Command_Vengeful_Ghost.png'
-import Spectral_Scythe from './assets/abilities/Spectral_Scythe.png'
-import Spectral_Scythe_2 from './assets/abilities/Spectral_Scythe_2.png'
-import Spectral_Scythe_3 from './assets/abilities/Spectral_Scythe_3.png'
-import Volley_of_Souls from './assets/abilities/Volley_of_Souls.png'
-import Living_Death from './assets/abilities/Living_Death.png'
-
-// Necro incantations
-import City_of_Um_Teleport from './assets/abilities/City_of_Um_Teleport.png'
-import Lesser_Bone_Shield from './assets/abilities/Lesser_Bone_Shield.png'
-import Threads_of_Fate from './assets/abilities/Threads_of_Fate.png'
-import Greater_Bone_Shield from './assets/abilities/Greater_Bone_Shield.png'
-import Life_Transfer from './assets/abilities/Life_Transfer.png'
-import Invoke_Death from './assets/abilities/Invoke_Death.png'
-import Darkness from './assets/abilities/Darkness.png'
-import Split_Soul from './assets/abilities/Split_Soul.png'
 
 export const abilitiesMap = {
   abyssalVineWhip: Abyssal_vine_whip,
@@ -251,6 +248,8 @@ export const abilitiesMap = {
   bindingShot: Binding_Shot,
   bladedDive: Bladed_Dive,
   blank: Blank,
+  bloat: Bloat,
+  bloodSiphon: Blood_Siphon,
   bloodTendrils: Blood_Tendrils,
   bombardment: Bombardment,
   boneDagger: Bone_dagger,
@@ -259,17 +258,26 @@ export const abilitiesMap = {
   brineSabre: Brine_sabre,
   chain: Chain,
   chaosRoar: Chaos_Roar,
+  cityOfUmTeleport: City_of_Um_Teleport,
   cleave: Cleave,
   combust: Combust,
+  commandPutridZombie: Command_Putrid_Zombie,
+  commandSkeletonWarrior: Command_Skeleton_Warrior,
+  commandVengefulGhost: Command_Vengeful_Ghost,
   concentratedBlast: Concentrated_Blast,
+  conjurePutridZombie: Conjure_Putrid_Zombie,
+  conjureSkeletonWarrior: Conjure_Skeleton_Warrior,
+  conjureVengefulGhost: Conjure_Vengeful_Ghost,
   corruptionBlast: Corruption_Blast,
   corruptionShot: Corruption_Shot,
   crystalHatchet: Crystal_hatchet,
   darkShardOfLeng: Dark_Shard_of_Leng,
   darkBow: Dark_bow,
   darklight: Darklight,
+  darkness: Darkness,
   dazingShot: Dazing_Shot,
   deadshot: Deadshot,
+  deathSkulls: Death_Skulls,
   deathsSwiftness: Deaths_Swiftness,
   debilitate: Debilitate,
   decimate: Decimate,
@@ -295,6 +303,7 @@ export const abilitiesMap = {
   eldritchCrossbow: Eldritch_crossbow,
   escape: Escape,
   essenceOfFinality: Essence_of_Finality,
+  fingerOfDeath: Finger_of_Death,
   flurry: Flurry,
   forcefulBackhand: Forceful_Backhand,
   fracturedStaffOfArmadyl: Fractured_Staff_of_Armadyl,
@@ -308,6 +317,7 @@ export const abilitiesMap = {
   goldenZamorakGodsword: Golden_Zamorak_godsword,
   graniteMaul: Granite_maul,
   greaterBarge: Greater_Barge,
+  greaterBoneShield: Greater_Bone_Shield,
   greaterChain: Greater_Chain,
   greaterConcentratedBlast: Greater_Concentrated_Blast,
   greaterDazingShot: Greater_Dazing_Shot,
@@ -331,10 +341,12 @@ export const abilitiesMap = {
   incendiaryShot: Incendiary_Shot,
   incite: Incite,
   ingenuityOfTheHumans: Ingenuity_of_the_Humans,
+  invokeDeath: Invoke_Death,
   keenblade: Keenblade,
   kick: Kick,
   korasisSword: Korasis_sword,
   lavaWhip: Lava_whip,
+  lesserBoneShield: Lesser_Bone_Shield,
   lesserCombust: Lesser_Combust,
   lesserConcentratedBlast: Lesser_Concentrated_Blast,
   lesserDazingShot: Lesser_Dazing_Shot,
@@ -347,7 +359,9 @@ export const abilitiesMap = {
   lesserSmash: Lesser_Smash,
   lesserSnipe: Lesser_Snipe,
   lesserSonicWave: Lesser_Sonic_Wave,
+  lifeTransfer: Life_Transfer,
   limitless: Limitless,
+  livingDeath: Living_Death,
   luckySaradominSword: Lucky_Saradomin_sword,
   luckyZamorakianSpear: Lucky_Zamorakian_spear,
   luckyAbyssalWhip: Lucky_abyssal_whip,
@@ -360,6 +374,7 @@ export const abilitiesMap = {
   meteorStrike: Meteor_Strike,
   mindspikeAir: Mindspike_air,
   naturalInstinct: Natural_Instinct,
+  necromancy: Necromancy,
   needleStrike: Needle_Strike,
   noxiousLongbow: Noxious_longbow,
   noxiousScythe: Noxious_scythe,
@@ -402,10 +417,17 @@ export const abilitiesMap = {
   slaughter: Slaughter,
   slice: Slice,
   smash: Smash,
+  smokeCloud: Smoke_Cloud,
   smokeTendrils: Smoke_Tendrils,
   snapShot: Snap_Shot,
   snipe: Snipe,
   sonicWave: Sonic_Wave,
+  soulSap: Soul_Sap,
+  soulStrike: Soul_Strike,
+  spectralScythe: Spectral_Scythe,
+  spectralScythe_2: Spectral_Scythe_2,
+  spectralScythe_3: Spectral_Scythe_3,
+  splitSoul: Split_Soul,
   staffOfSliske: Staff_of_Sliske,
   staffOfDarkness: Staff_of_darkness,
   staffOfLight: Staff_of_light,
@@ -422,11 +444,14 @@ export const abilitiesMap = {
   superiorAncientMace: Superior_ancient_mace,
   superiorBloodiedKyzaj: Superior_bloodied_kyzaj,
   surge: Surge,
+  threadsOfFate: Threads_of_Fate,
   tightBindings: Tight_Bindings,
+  touchOfDeath: Touch_of_Death,
   transfigure: Transfigure,
   tsunami: Tsunami,
   tuskasWrath: Tuskas_Wrath,
   unload: Unload,
+  volleyOfSouls: Volley_of_Souls,
   weaponSpecialAttack: Weapon_Special_attack,
   wildMagic: Wild_Magic,
   wrack: Wrack,
@@ -435,33 +460,6 @@ export const abilitiesMap = {
   zamorakStaff: Zamorak_staff,
   zaniksCrossbow: Zaniks_crossbow,
   zarosGodsword: Zaros_godsword,
-  necromancy: Necromancy,
-  conjureSkeletonWarrior: Conjure_Skeleton_Warrior,
-  fingerOfDeath: Finger_of_Death,
-  touchOfDeath: Touch_of_Death,
-  commandSkeletonWarrior: Command_Skeleton_Warrior,
-  deathSkulls: Death_Skulls,
-  bloodSiphon: Blood_Siphon,
-  conjurePutridZombie: Conjure_Putrid_Zombie,
-  conjureVengefulGhost: Conjure_Vengeful_Ghost,
-  bloat: Bloat,
-  soulSap: Soul_Sap,
-  soulStrike: Soul_Strike,
-  commandPutridZombie: Command_Putrid_Zombie,
-  commandVengefulGhost: Command_Vengeful_Ghost,
-  spectralScythe: Spectral_Scythe,
-  spectralScythe2: Spectral_Scythe_2,
-  spectralScythe3: Spectral_Scythe_3,
-  volleyOfSouls: Volley_of_Souls,
-  livingDeath: Living_Death,
-  cityOfUmTeleport: City_of_Um_Teleport,
-  lesserBoneShield: Lesser_Bone_Shield,
-  threadsOfFate: Threads_of_Fate,
-  greaterBoneShield: Greater_Bone_Shield,
-  lifeTransfer: Life_Transfer,
-  invokeDeath: Invoke_Death,
-  darkness: Darkness,
-  splitSoul: Split_Soul,
 } as const
 
 export type AbilityName = keyof typeof abilitiesMap
