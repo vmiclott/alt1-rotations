@@ -37,8 +37,8 @@ export const AbilityRotationCreator = () => {
       <label>Ability rotation JSON</label>
       <textarea
         placeholder={`[
-          { "name": "blank", "tick": -1 },
-          { "name": "blank", "tick": -1 }
+          { "name": "berserk", "tick": 0, "keybind": "1" },
+          { "name": "cleave", "tick": 3, "keybind": "2" }
 ]`}
         className="ability-rotation-creator__rotation-textarea"
         value={abilityRotationText}
