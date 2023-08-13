@@ -1,6 +1,6 @@
 import { Ability } from '../abilities'
 import './dropdown.css'
-import { SetStateAction, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Icon = () => {
   return (

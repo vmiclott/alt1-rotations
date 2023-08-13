@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { AbilityRotationVisualizer } from './components/AbilityRotationVisualizer'
 import { TabLayout } from './components/TabLayout'
 import { AbilityRotationCreator } from './components/AbilityRotationCreator'
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Router basename="/ability-rotations/">
+      <BrowserRouter basename="alt1-rotations">
         <Routes>
           <Route
             path="/"
@@ -74,7 +74,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
         </Routes>
         <TabLayout />
-      </Router>
+      </BrowserRouter>
     </div>
   )
 }
