@@ -1,4 +1,5 @@
 import Abyssal_vine_whip from './assets/abilities/Abyssal_vine_whip.png'
+import Aggression from './assets/abilities/Aggression.png'
 import Aggressive_Stance from './assets/abilities/Aggressive_Stance.png'
 import Annihilation from './assets/abilities/Annihilation.png'
 import Anticipation from './assets/abilities/Anticipation.png'
@@ -24,6 +25,7 @@ import Bone_dagger from './assets/abilities/Bone_dagger.png'
 import Bow_of_the_Last_Guardian from './assets/abilities/Bow_of_the_Last_Guardian.png'
 import Brackish_blade from './assets/abilities/Brackish_blade.png'
 import Brine_sabre from './assets/abilities/Brine_sabre.png'
+import Cease from './assets/abilities/Cease.png'
 import Chain from './assets/abilities/Chain.png'
 import Chaos_Roar from './assets/abilities/Chaos_Roar.png'
 import City_of_Um_Teleport from './assets/abilities/City_of_Um_Teleport.png'
@@ -52,6 +54,7 @@ import Decimate from './assets/abilities/Decimate.png'
 import Decimation from './assets/abilities/Decimation.png'
 import Deep_Impact from './assets/abilities/Deep_Impact.png'
 import Defensive_Stance from './assets/abilities/Defensive_Stance.png'
+import Demon_Slayer from './assets/abilities/Demon_Slayer.png'
 import Demoralise from './assets/abilities/Demoralise.png'
 import Destroy from './assets/abilities/Destroy.png'
 import Detonate from './assets/abilities/Detonate.png'
@@ -61,6 +64,7 @@ import Divert from './assets/abilities/Divert.png'
 import Dragon_2h_sword from './assets/abilities/Dragon_2h_sword.png'
 import Dragon_Breath from './assets/abilities/Dragon_Breath.png'
 import Dragon_Claw from './assets/abilities/Dragon_Claw.png'
+import Dragon_Slayer from './assets/abilities/Dragon_Slayer.png'
 import Dragon_battleaxe from './assets/abilities/Dragon_battleaxe.png'
 import Dragon_dagger from './assets/abilities/Dragon_dagger.png'
 import Dragon_halberd from './assets/abilities/Dragon_halberd.png'
@@ -113,6 +117,7 @@ import Invoke_Death from './assets/abilities/Invoke_Death.png'
 import Keenblade from './assets/abilities/Keenblade.png'
 import Kick from './assets/abilities/Kick.png'
 import Korasis_sword from './assets/abilities/Korasis_sword.png'
+import Kuradals_Favour from './assets/abilities/Kuradals_Favour.png'
 import Lava_whip from './assets/abilities/Lava_whip.png'
 import Lesser_Bone_Shield from './assets/abilities/Lesser_Bone_Shield.png'
 import Lesser_Combust from './assets/abilities/Lesser_Combust.png'
@@ -183,6 +188,7 @@ import Shadow_Tendrils from './assets/abilities/Shadow_Tendrils.png'
 import Shatter from './assets/abilities/Shatter.png'
 import Shock from './assets/abilities/Shock.png'
 import Slaughter from './assets/abilities/Slaughter.png'
+import Slayers_Insight from './assets/abilities/Slayers_Insight.png'
 import Slice from './assets/abilities/Slice.png'
 import Smash from './assets/abilities/Smash.png'
 import Smoke_Cloud from './assets/abilities/Smoke_Cloud.png'
@@ -218,7 +224,9 @@ import Touch_of_Death from './assets/abilities/Touch_of_Death.png'
 import Transfigure from './assets/abilities/Transfigure.png'
 import Tsunami from './assets/abilities/Tsunami.png'
 import Tuskas_Wrath from './assets/abilities/Tuskas_Wrath.png'
+import Undead_Slayer from './assets/abilities/Undead_Slayer.png'
 import Unload from './assets/abilities/Unload.png'
+import Unsullied from './assets/abilities/Unsullied.png'
 import Volley_of_Souls from './assets/abilities/Volley_of_Souls.png'
 import Weapon_Special_attack from './assets/abilities/Weapon_Special_attack.png'
 import Wild_Magic from './assets/abilities/Wild_Magic.png'
@@ -231,6 +239,7 @@ import Zaros_godsword from './assets/abilities/Zaros_godsword.png'
 
 export const abilitiesMap = {
   abyssalVineWhip: Abyssal_vine_whip,
+  aggression: Aggression,
   aggressiveStance: Aggressive_Stance,
   annihilation: Annihilation,
   anticipation: Anticipation,
@@ -256,6 +265,7 @@ export const abilitiesMap = {
   bowOfTheLastGuardian: Bow_of_the_Last_Guardian,
   brackishBlade: Brackish_blade,
   brineSabre: Brine_sabre,
+  cease: Cease,
   chain: Chain,
   chaosRoar: Chaos_Roar,
   cityOfUmTeleport: City_of_Um_Teleport,
@@ -284,6 +294,7 @@ export const abilitiesMap = {
   decimation: Decimation,
   deepImpact: Deep_Impact,
   defensiveStance: Defensive_Stance,
+  demonSlayer: Demon_Slayer,
   demoralise: Demoralise,
   destroy: Destroy,
   detonate: Detonate,
@@ -293,6 +304,7 @@ export const abilitiesMap = {
   dragon_2hSword: Dragon_2h_sword,
   dragonBreath: Dragon_Breath,
   dragonClaw: Dragon_Claw,
+  dragonSlayer: Dragon_Slayer,
   dragonBattleaxe: Dragon_battleaxe,
   dragonDagger: Dragon_dagger,
   dragonHalberd: Dragon_halberd,
@@ -345,6 +357,7 @@ export const abilitiesMap = {
   keenblade: Keenblade,
   kick: Kick,
   korasisSword: Korasis_sword,
+  kuradalsFavour: Kuradals_Favour,
   lavaWhip: Lava_whip,
   lesserBoneShield: Lesser_Bone_Shield,
   lesserCombust: Lesser_Combust,
@@ -415,6 +428,7 @@ export const abilitiesMap = {
   shatter: Shatter,
   shock: Shock,
   slaughter: Slaughter,
+  slayersInsight: Slayers_Insight,
   slice: Slice,
   smash: Smash,
   smokeCloud: Smoke_Cloud,
@@ -450,7 +464,9 @@ export const abilitiesMap = {
   transfigure: Transfigure,
   tsunami: Tsunami,
   tuskasWrath: Tuskas_Wrath,
+  undeadSlayer: Undead_Slayer,
   unload: Unload,
+  unsullied: Unsullied,
   volleyOfSouls: Volley_of_Souls,
   weaponSpecialAttack: Weapon_Special_attack,
   wildMagic: Wild_Magic,
