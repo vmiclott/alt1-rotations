@@ -40,6 +40,7 @@ export const Dropdown = ({ setAbilityRotation }: DropdownProps) => {
         console.error('invalid json')
       }
     } else {
+      setShownOption('Select...')
       console.error('Rotation not found from localStorage')
     }
   }
@@ -60,7 +61,7 @@ export const Dropdown = ({ setAbilityRotation }: DropdownProps) => {
     rotationNames.splice(indexToDelete, 1)
     localStorage.setItem('abilityRotationNames', JSON.stringify(rotationNames))
     localStorage.removeItem(rotationName)
-    setAbilityRotation(rotationNames)
+    setAbilityRotationNames(rotationNames)
   }
 
   return (
