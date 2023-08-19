@@ -1,4 +1,6 @@
 import { Ability } from '../abilities'
+import { DeleteSvg } from './DeleteSvg'
+import { Svg } from './Svg'
 import './dropdown.css'
 import { useEffect, useState } from 'react'
 
@@ -42,6 +44,25 @@ export const Dropdown = ({ setAbilityRotation }: DropdownProps) => {
     }
   }
 
+  const deleteRotation = (rotationName: string) => {
+    const abilityRotationLocalStorage = localStorage.getItem(
+      'abilityRotationNames'
+    )
+    if (!abilityRotationLocalStorage) return
+
+    const rotationNames = JSON.parse(abilityRotationLocalStorage)
+    const indexToDelete = rotationNames.indexOf(rotationName)
+
+    if (indexToDelete === -1) {
+      return
+    }
+
+    rotationNames.splice(indexToDelete, 1)
+    localStorage.setItem('abilityRotationNames', JSON.stringify(rotationNames))
+    localStorage.removeItem(rotationName)
+    setAbilityRotation(rotationNames)
+  }
+
   return (
     <div className="dropdown" onClick={handleIsOpen}>
       <div tabIndex={0} className="dropdown__input-container">
@@ -61,6 +82,17 @@ export const Dropdown = ({ setAbilityRotation }: DropdownProps) => {
             className="dropdown__option"
           >
             {rotationName}
+            <div className="dropdown__trashcan-container">
+              <Svg
+                className="dropdown__svg"
+                tooltipText="Delete rotation"
+                icon={
+                  <div onClick={() => deleteRotation(rotationName)}>
+                    <DeleteSvg></DeleteSvg>
+                  </div>
+                }
+              ></Svg>
+            </div>
           </li>
         ))}
       </ul>
