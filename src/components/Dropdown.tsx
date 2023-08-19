@@ -83,17 +83,15 @@ export const Dropdown = ({ setAbilityRotation }: DropdownProps) => {
             className="dropdown__option"
           >
             {rotationName}
-            <div className="dropdown__trashcan-container">
-              <Svg
-                className="dropdown__svg"
-                tooltipText="Delete rotation"
-                icon={
-                  <div onClick={() => deleteRotation(rotationName)}>
-                    <DeleteSvg></DeleteSvg>
-                  </div>
-                }
-              ></Svg>
-            </div>
+            <Svg
+              className="dropdown__svg"
+              tooltipText="Delete rotation"
+              icon={
+                <div onClick={() => deleteRotation(rotationName)}>
+                  <DeleteSvg></DeleteSvg>
+                </div>
+              }
+            ></Svg>
           </li>
         ))}
       </ul>
