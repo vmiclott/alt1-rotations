@@ -37,10 +37,14 @@
   }
 
   &__option {
+    max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0.375rem 0.88rem;
     border-bottom: 1px solid rgb(235, 235, 235);
     background: var(--nis-col-back);
-    cursor: pointer;
 
     &:hover {
       color: #fff;
@@ -50,5 +54,9 @@
     &:last-child {
       border-bottom: 0 none;
     }
+  }
+
+  &__svg {
+    cursor: pointer;
   }
 }
