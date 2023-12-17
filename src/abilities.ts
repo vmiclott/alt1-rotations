@@ -37,6 +37,7 @@ import Command_Vengeful_Ghost from './assets/abilities/Command_Vengeful_Ghost.pn
 import Concentrated_Blast from './assets/abilities/Concentrated_Blast.png'
 import Conjure_Putrid_Zombie from './assets/abilities/Conjure_Putrid_Zombie.png'
 import Conjure_Skeleton_Warrior from './assets/abilities/Conjure_Skeleton_Warrior.png'
+import Conjure_Undead_Army from './assets/abilities/Conjure_Undead_Army.png'
 import Conjure_Vengeful_Ghost from './assets/abilities/Conjure_Vengeful_Ghost.png'
 import Corruption_Blast from './assets/abilities/Corruption_Blast.png'
 import Corruption_Shot from './assets/abilities/Corruption_Shot.png'
@@ -76,6 +77,7 @@ import Eldritch_crossbow from './assets/abilities/Eldritch_crossbow.png'
 import Escape from './assets/abilities/Escape.png'
 import Essence_of_Finality from './assets/abilities/Essence_of_Finality.png'
 import Finger_of_Death from './assets/abilities/Finger_of_Death.png'
+import Fire_Ballista from './assets/abilities/Fire_Ballista.png'
 import Flurry from './assets/abilities/Flurry.png'
 import Forceful_Backhand from './assets/abilities/Forceful_Backhand.png'
 import Fractured_Staff_of_Armadyl from './assets/abilities/Fractured_Staff_of_Armadyl.png'
@@ -114,6 +116,7 @@ import Incendiary_Shot from './assets/abilities/Incendiary_Shot.png'
 import Incite from './assets/abilities/Incite.png'
 import Ingenuity_of_the_Humans from './assets/abilities/Ingenuity_of_the_Humans.png'
 import Invoke_Death from './assets/abilities/Invoke_Death.png'
+import Invoke_Lord_Of_Bones from './assets/abilities/Invoke_Lord_Of_Bones.png'
 import Keenblade from './assets/abilities/Keenblade.png'
 import Kick from './assets/abilities/Kick.png'
 import Korasis_sword from './assets/abilities/Korasis_sword.png'
@@ -218,6 +221,7 @@ import Superior_Zuriels_staff from './assets/abilities/Superior_Zuriels_staff.pn
 import Superior_ancient_mace from './assets/abilities/Superior_ancient_mace.png'
 import Superior_bloodied_kyzaj from './assets/abilities/Superior_bloodied_kyzaj.png'
 import Surge from './assets/abilities/Surge.png'
+import Target_Cycle_Forwards from './assets/abilities/Target_Cycle_Forwards.png'
 import Threads_of_Fate from './assets/abilities/Threads_of_Fate.png'
 import Tight_Bindings from './assets/abilities/Tight_Bindings.png'
 import Touch_of_Death from './assets/abilities/Touch_of_Death.png'
@@ -228,6 +232,8 @@ import Undead_Slayer from './assets/abilities/Undead_Slayer.png'
 import Unload from './assets/abilities/Unload.png'
 import Unsullied from './assets/abilities/Unsullied.png'
 import Volley_of_Souls from './assets/abilities/Volley_of_Souls.png'
+import Vulnerability from './assets/abilities/Vulnerability.png'
+import Vulnerability_Bomb from './assets/abilities/Vulnerability_Bomb.png'
 import Weapon_Special_attack from './assets/abilities/Weapon_Special_attack.png'
 import Wild_Magic from './assets/abilities/Wild_Magic.png'
 import Wrack from './assets/abilities/Wrack.png'
@@ -277,6 +283,7 @@ export const abilitiesMap = {
   concentratedBlast: Concentrated_Blast,
   conjurePutridZombie: Conjure_Putrid_Zombie,
   conjureSkeletonWarrior: Conjure_Skeleton_Warrior,
+  conjureUndeadArmy: Conjure_Undead_Army,
   conjureVengefulGhost: Conjure_Vengeful_Ghost,
   corruptionBlast: Corruption_Blast,
   corruptionShot: Corruption_Shot,
@@ -316,6 +323,7 @@ export const abilitiesMap = {
   escape: Escape,
   essenceOfFinality: Essence_of_Finality,
   fingerOfDeath: Finger_of_Death,
+  fireBallista: Fire_Ballista,
   flurry: Flurry,
   forcefulBackhand: Forceful_Backhand,
   fracturedStaffOfArmadyl: Fractured_Staff_of_Armadyl,
@@ -354,6 +362,7 @@ export const abilitiesMap = {
   incite: Incite,
   ingenuityOfTheHumans: Ingenuity_of_the_Humans,
   invokeDeath: Invoke_Death,
+  invokeLordOfBones: Invoke_Lord_Of_Bones,
   keenblade: Keenblade,
   kick: Kick,
   korasisSword: Korasis_sword,
@@ -458,6 +467,7 @@ export const abilitiesMap = {
   superiorAncientMace: Superior_ancient_mace,
   superiorBloodiedKyzaj: Superior_bloodied_kyzaj,
   surge: Surge,
+  targetCycleForwards: Target_Cycle_Forwards,
   threadsOfFate: Threads_of_Fate,
   tightBindings: Tight_Bindings,
   touchOfDeath: Touch_of_Death,
@@ -468,6 +478,8 @@ export const abilitiesMap = {
   unload: Unload,
   unsullied: Unsullied,
   volleyOfSouls: Volley_of_Souls,
+  vulnerability: Vulnerability,
+  vulnerabilityBomb: Vulnerability_Bomb,
   weaponSpecialAttack: Weapon_Special_attack,
   wildMagic: Wild_Magic,
   wrack: Wrack,
