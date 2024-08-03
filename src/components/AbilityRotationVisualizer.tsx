@@ -43,6 +43,7 @@ export const AbilityRotationVisualizer = ({
 
   const [storedRotations, setStoredRotations] = useState<string[]>([])
   const [currentRotationIndex, setCurrentRotationIndex] = useState(0)
+  const [nextRotation, setNextRotation] = useState<Ability[] | null>(null)
 
   useEffect(() => {
     const rotations = localStorage.getItem('multipleBossRotations')
@@ -89,7 +90,7 @@ export const AbilityRotationVisualizer = ({
       const nextRotationName = storedRotations[nextIndex]
       const nextRotationData = localStorage.getItem(nextRotationName)
       if (nextRotationData) {
-        setAbilityRotation(JSON.parse(nextRotationData))
+        setNextRotation(JSON.parse(nextRotationData))
       }
       return nextIndex
     })
@@ -102,11 +103,18 @@ export const AbilityRotationVisualizer = ({
       const nextRotationName = storedRotations[nextIndex]
       const nextRotationData = localStorage.getItem(nextRotationName)
       if (nextRotationData) {
-        setAbilityRotation(JSON.parse(nextRotationData))
+        setNextRotation(JSON.parse(nextRotationData))
       }
       return nextIndex
     })
   }
+
+  useEffect(() => {
+    if (nextRotation) {
+      setAbilityRotation(nextRotation)
+      setNextRotation(null)
+    }
+  }, [nextRotation, setAbilityRotation])
 
   useEffect(() => {
     const interval = setInterval(() => {
