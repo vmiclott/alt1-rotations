@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
 import { AbilityRotationVisualizer } from './components/AbilityRotationVisualizer'
 import { TabLayout } from './components/TabLayout'
 import { AbilityRotationCreator } from './components/AbilityRotationCreator'
@@ -16,17 +16,11 @@ function App() {
   const currentRotationIndex = 0
 
   useEffect(() => {
-    // redirect magic because we don't know how to set default path to /
-    if (location.pathname.includes('index.html')) {
-      location.replace('./')
-    }
-
-    // Load last used rotation(s) on app start
     const onStartData = localStorage.getItem('onStartRotation')
     if (onStartData) {
       const onStart = JSON.parse(onStartData)
       if (onStart.multiple) {
-        const rotations = onStart.updatedSelectedOptions
+        const rotations = onStart.storedMultipleRotations
         setSelectedRotations(rotations)
         if (rotations.length > 0) {
           const rotationData = localStorage.getItem(rotations[0])
@@ -53,10 +47,15 @@ function App() {
     }
   }, [selectedRotations])
 
+  const basename = window.location.pathname.includes('/alt1-rotations/')
+    ? '/alt1-rotations/'
+    : '/'
+
   return (
     <div className="app-container">
-      <BrowserRouter basename="alt1-rotations">
+      <BrowserRouter basename={basename}>
         <Routes>
+          <Route path="/index.html" element={<Navigate to="/" />} />
           <Route
             path="/"
             element={
