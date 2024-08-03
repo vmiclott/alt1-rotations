@@ -11,7 +11,7 @@ export const MultiSelectDropdown: React.FC<DropdownProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [abilityRotationNames, setAbilityRotationNames] = useState<string[]>([])
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
+  const [rotationOptions, setRotationOptions] = useState<string[]>([])
 
   const handleIsOpen = () => {
     setIsOpen(!isOpen)
@@ -22,34 +22,36 @@ export const MultiSelectDropdown: React.FC<DropdownProps> = ({
     if (rotationNames) {
       setAbilityRotationNames(JSON.parse(rotationNames))
     }
-    const storedSelectedOptions = localStorage.getItem('multipleBossRotations')
-    if (storedSelectedOptions) {
-      const parsedOptions = JSON.parse(storedSelectedOptions)
-      setSelectedOptions(parsedOptions)
+    const storedMultipleRotations = localStorage.getItem(
+      'multipleBossRotations'
+    )
+    if (storedMultipleRotations) {
+      const parsedOptions = JSON.parse(storedMultipleRotations)
+      setRotationOptions(parsedOptions)
       setSelectedRotations(parsedOptions)
     }
   }, [])
 
   const handleOptionClick = (rotationName: string) => {
-    let updatedSelectedOptions
-    if (selectedOptions.includes(rotationName)) {
-      updatedSelectedOptions = selectedOptions.filter(
+    let storedMultipleRotations
+    if (rotationOptions.includes(rotationName)) {
+      storedMultipleRotations = rotationOptions.filter(
         (item) => item !== rotationName
       )
     } else {
-      updatedSelectedOptions = [...selectedOptions, rotationName]
+      storedMultipleRotations = [...rotationOptions, rotationName]
     }
-    setSelectedOptions(updatedSelectedOptions)
-    setSelectedRotations(updatedSelectedOptions)
+    setRotationOptions(storedMultipleRotations)
+    setSelectedRotations(storedMultipleRotations)
     localStorage.setItem(
       'multipleBossRotations',
-      JSON.stringify(updatedSelectedOptions)
+      JSON.stringify(storedMultipleRotations)
     )
     localStorage.setItem(
       'onStartRotation',
       JSON.stringify({
         multiple: true,
-        updatedSelectedOptions,
+        storedMultipleRotations,
       })
     )
   }
@@ -58,8 +60,8 @@ export const MultiSelectDropdown: React.FC<DropdownProps> = ({
     <div className="dropdown" onClick={handleIsOpen}>
       <div tabIndex={0} className="dropdown__input-container">
         <span className="dropdown__value">
-          {selectedOptions.length > 0
-            ? selectedOptions.join(', ')
+          {rotationOptions.length > 0
+            ? rotationOptions.join(', ')
             : 'Select options'}
         </span>
         <DropDownIcon />
@@ -73,7 +75,7 @@ export const MultiSelectDropdown: React.FC<DropdownProps> = ({
               handleOptionClick(rotationName)
             }}
             className={`dropdown__option ${
-              selectedOptions.includes(rotationName) ? 'selected' : ''
+              rotationOptions.includes(rotationName) ? 'selected' : ''
             }`}
           >
             {rotationName}
