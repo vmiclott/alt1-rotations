@@ -26,7 +26,6 @@ function App() {
     if (onStartData) {
       const onStart = JSON.parse(onStartData)
       if (onStart.multiple) {
-        console.log('haloo!')
         const rotations = onStart.updatedSelectedOptions
         setSelectedRotations(rotations)
         if (rotations.length > 0) {
