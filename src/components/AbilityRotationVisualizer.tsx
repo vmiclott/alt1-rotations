@@ -4,6 +4,8 @@ import { Ability } from '../abilities'
 import { AbilityIcon } from './AbilityIcon'
 import { Button } from './Button'
 import BossTimerReader from '@alt1/bosstimer'
+import { ArrowBackSvg } from './ArrowBackSvg'
+import { ArrowForwardSvg } from './ArrowForwardSvg'
 
 const findNextIndex = (abilities: Ability[], currentIndex: number): number => {
   let nextIndex = currentIndex + 1
@@ -18,10 +20,12 @@ const findNextIndex = (abilities: Ability[], currentIndex: number): number => {
 
 type AbilityRotationVisualizerProps = {
   abilityRotation: Ability[]
+  setAbilityRotation: (rotation: Ability[]) => void
 }
 
 export const AbilityRotationVisualizer = ({
   abilityRotation,
+  setAbilityRotation,
 }: AbilityRotationVisualizerProps) => {
   const [magicState, setMagicState] = useState({
     currentIndex: 0,
@@ -33,6 +37,19 @@ export const AbilityRotationVisualizer = ({
   const useBosstimer: boolean = localStorage.getItem('bosstimerChecked')
     ? JSON.parse(localStorage.getItem('bosstimerChecked')!)
     : true
+  const showArrows: boolean = localStorage.getItem('showArrowsChecked')
+    ? JSON.parse(localStorage.getItem('showArrowsChecked')!)
+    : true
+
+  const [storedRotations, setStoredRotations] = useState<string[]>([])
+  const [currentRotationIndex, setCurrentRotationIndex] = useState(0)
+
+  useEffect(() => {
+    const rotations = localStorage.getItem('multipleBossRotations')
+    if (rotations) {
+      setStoredRotations(JSON.parse(rotations))
+    }
+  }, [])
 
   useEffect(() => {
     function handleResize() {
@@ -46,7 +63,7 @@ export const AbilityRotationVisualizer = ({
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [elementRef])
+  }, [])
 
   const handleStart = () => {
     setStarted(true)
@@ -66,6 +83,31 @@ export const AbilityRotationVisualizer = ({
 
   const bossTimerReader = new BossTimerReader()
 
+  const switchToNextRotation = () => {
+    setCurrentRotationIndex((prevIndex) => {
+      const nextIndex = (prevIndex + 1) % storedRotations.length
+      const nextRotationName = storedRotations[nextIndex]
+      const nextRotationData = localStorage.getItem(nextRotationName)
+      if (nextRotationData) {
+        setAbilityRotation(JSON.parse(nextRotationData))
+      }
+      return nextIndex
+    })
+  }
+
+  const switchPreviousRotation = () => {
+    setCurrentRotationIndex((prevIndex) => {
+      const nextIndex =
+        (prevIndex - 1 + storedRotations.length) % storedRotations.length
+      const nextRotationName = storedRotations[nextIndex]
+      const nextRotationData = localStorage.getItem(nextRotationName)
+      if (nextRotationData) {
+        setAbilityRotation(JSON.parse(nextRotationData))
+      }
+      return nextIndex
+    })
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (useBosstimer) {
@@ -74,6 +116,7 @@ export const AbilityRotationVisualizer = ({
           return
         } else if (started && bossTimerReader.find() === null) {
           handleReset()
+          switchToNextRotation()
           return
         }
       }
@@ -97,7 +140,14 @@ export const AbilityRotationVisualizer = ({
     }, 600)
 
     return () => clearInterval(interval)
-  }, [started])
+  }, [
+    started,
+    storedRotations,
+    useBosstimer,
+    bossTimerReader,
+    abilityRotation,
+    setAbilityRotation,
+  ])
 
   return (
     <div className="visualizer">
@@ -132,7 +182,20 @@ export const AbilityRotationVisualizer = ({
           </Button>
         </div>
       )}
-      <p>tick:{magicState.currentTick}</p>
+      <p>
+        tick:{magicState.currentTick}{' '}
+        {showArrows && (
+          <>
+            <Button onClick={switchPreviousRotation}>
+              <ArrowBackSvg />
+            </Button>
+            <span>{storedRotations[currentRotationIndex]}</span>
+            <Button onClick={switchToNextRotation}>
+              <ArrowForwardSvg />
+            </Button>
+          </>
+        )}
+      </p>
     </div>
   )
 }

@@ -11,4 +11,8 @@
     cursor: pointer;
     background-color: #0062cc;
   }
+
+  .button svg {
+    overflow: hidden;
+  }
 }
