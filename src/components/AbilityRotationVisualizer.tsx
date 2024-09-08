@@ -18,6 +18,14 @@ const findNextIndex = (abilities: Ability[], currentIndex: number): number => {
   return nextIndex
 }
 
+const debounce = (func: (...args: any[]) => void, wait: number) => {
+  let timeout: ReturnType<typeof setTimeout>
+  return (...args: any[]) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
+  }
+}
+
 type AbilityRotationVisualizerProps = {
   abilityRotation: Ability[]
   setAbilityRotation: (rotation: Ability[]) => void
@@ -53,13 +61,13 @@ export const AbilityRotationVisualizer = ({
   }, [])
 
   useEffect(() => {
-    function handleResize() {
+    const handleResize = debounce(() => {
       if (elementRef.current?.clientWidth) {
         setMiddleOfScreen(elementRef.current.clientWidth / 2)
       }
-    }
-    handleResize()
+    }, 200)
 
+    handleResize()
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
