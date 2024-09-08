@@ -1,4 +1,5 @@
 import Abyssal_vine_whip from './assets/abilities/Abyssal_vine_whip.png'
+import Adrenaline_Renewal from './assets/abilities/Adrenaline_Renewal.png'
 import Aggression from './assets/abilities/Aggression.png'
 import Aggressive_Stance from './assets/abilities/Aggressive_Stance.png'
 import Annihilation from './assets/abilities/Annihilation.png'
@@ -245,6 +246,7 @@ import Zaros_godsword from './assets/abilities/Zaros_godsword.png'
 
 export const abilitiesMap = {
   abyssalVineWhip: Abyssal_vine_whip,
+  adrenalineRenewal: Adrenaline_Renewal,
   aggression: Aggression,
   aggressiveStance: Aggressive_Stance,
   annihilation: Annihilation,
