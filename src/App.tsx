@@ -14,6 +14,9 @@ function App() {
     useState<Ability[]>(defaultRotation)
   const [selectedRotations, setSelectedRotations] = useState<string[]>([])
   const currentRotationIndex = 0
+  const basename = window.location.pathname.includes('/alt1-rotations/')
+    ? '/alt1-rotations/'
+    : '/'
 
   useEffect(() => {
     const onStartData = localStorage.getItem('onStartRotation')
@@ -46,10 +49,6 @@ function App() {
       }
     }
   }, [selectedRotations])
-
-  const basename = window.location.pathname.includes('/alt1-rotations/')
-    ? '/alt1-rotations/'
-    : '/'
 
   return (
     <div className="app-container">

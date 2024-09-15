@@ -1,3 +1,4 @@
+import React from 'react'
 import './button.css'
 
 type ButtonProps = {
@@ -6,13 +7,16 @@ type ButtonProps = {
   children?: React.ReactNode
 }
 
-export const Button = ({ className, onClick, children }: ButtonProps) => {
-  return (
-    <button
-      className={`button${className ? ` ${className}` : ''}`}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  )
-}
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, onClick, children }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={`button${className ? ` ${className}` : ''}`}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    )
+  }
+)
