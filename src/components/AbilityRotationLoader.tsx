@@ -1,4 +1,5 @@
 import './abilityRotationLoader.css'
+import { useRef } from 'react'
 import { Dropdown } from './Dropdown'
 import { Ability, abilitiesMap } from '../abilities'
 import { MultiSelectDropdown } from './MultiSelectDropdown'
@@ -19,9 +20,23 @@ export const AbilityRotationLoader = ({
     setAbilityRotation(newValue)
   }
 
+  // Create a ref to store the clearOptions function from MultiSelectDropdown
+  const clearOptionsRef = useRef<(() => void) | undefined>(undefined)
+  const deleteButtonRef = useRef<HTMLButtonElement | null>(null)
+
   const deleteStoredMultipleBossRotations = () => {
     localStorage.removeItem('multipleBossRotations')
     setAbilityRotation([])
+  }
+
+  const handleDeleteClick = () => {
+    if (clearOptionsRef.current) {
+      clearOptionsRef.current()
+    }
+
+    if (deleteButtonRef.current) {
+      deleteButtonRef.current.blur()
+    }
   }
 
   return (
@@ -55,11 +70,16 @@ export const AbilityRotationLoader = ({
                 }
               }
             }}
+            clearOptionsRef={clearOptionsRef}
           />
           <div className="loader-container__buttoncontainer">
             <Button
+              ref={deleteButtonRef}
               className="loader-container__deletemultibutton"
-              onClick={deleteStoredMultipleBossRotations}
+              onClick={() => {
+                deleteStoredMultipleBossRotations()
+                handleDeleteClick() // Call the handler that blurs the button
+              }}
             >
               <Svg
                 tooltipText="Removes stored multipleBossRotations"

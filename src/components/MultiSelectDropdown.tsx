@@ -4,10 +4,12 @@ import { DropDownIcon } from './DropDownIcon'
 
 type DropdownProps = {
   setSelectedRotations: (newValue: string[]) => void
+  clearOptionsRef: React.MutableRefObject<(() => void) | undefined>
 }
 
 export const MultiSelectDropdown: React.FC<DropdownProps> = ({
   setSelectedRotations,
+  clearOptionsRef,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [abilityRotationNames, setAbilityRotationNames] = useState<string[]>([])
@@ -31,6 +33,17 @@ export const MultiSelectDropdown: React.FC<DropdownProps> = ({
       setSelectedRotations(parsedOptions)
     }
   }, [])
+
+  useEffect(() => {
+    if (clearOptionsRef) {
+      clearOptionsRef.current = () => {
+        setRotationOptions([])
+        setSelectedRotations([])
+        localStorage.removeItem('multipleBossRotations')
+        setIsOpen(false)
+      }
+    }
+  }, [clearOptionsRef, setSelectedRotations])
 
   const handleOptionClick = (rotationName: string) => {
     let storedMultipleRotations
